@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FBDE2F22218755A5006628D5 /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE2F21218755A5006628D5 /* MyUtils.swift */; };
+		FBDE2F292188629A006628D5 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBDE2F242188629A006628D5 /* win.wav */; };
+		FBDE2F2A2188629A006628D5 /* lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBDE2F252188629A006628D5 /* lose.wav */; };
+		FBDE2F2B2188629A006628D5 /* hitCat.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBDE2F262188629A006628D5 /* hitCat.wav */; };
+		FBDE2F2C2188629A006628D5 /* hitCatLady.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBDE2F272188629A006628D5 /* hitCatLady.wav */; };
+		FBDE2F2D2188629A006628D5 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBDE2F282188629A006628D5 /* backgroundMusic.mp3 */; };
 		FBE224F62185CC49003D35B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE224F52185CC49003D35B7 /* AppDelegate.swift */; };
 		FBE224FC2185CC49003D35B7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE224FB2185CC49003D35B7 /* GameScene.swift */; };
 		FBE224FE2185CC49003D35B7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE224FD2185CC49003D35B7 /* GameViewController.swift */; };
@@ -18,6 +23,11 @@
 
 /* Begin PBXFileReference section */
 		FBDE2F21218755A5006628D5 /* MyUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
+		FBDE2F242188629A006628D5 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
+		FBDE2F252188629A006628D5 /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lose.wav; sourceTree = "<group>"; };
+		FBDE2F262188629A006628D5 /* hitCat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCat.wav; sourceTree = "<group>"; };
+		FBDE2F272188629A006628D5 /* hitCatLady.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCatLady.wav; sourceTree = "<group>"; };
+		FBDE2F282188629A006628D5 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		FBE224F22185CC49003D35B7 /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE224F52185CC49003D35B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBE224FB2185CC49003D35B7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -39,6 +49,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FBDE2F232188629A006628D5 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FBDE2F242188629A006628D5 /* win.wav */,
+				FBDE2F252188629A006628D5 /* lose.wav */,
+				FBDE2F262188629A006628D5 /* hitCat.wav */,
+				FBDE2F272188629A006628D5 /* hitCatLady.wav */,
+				FBDE2F282188629A006628D5 /* backgroundMusic.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		FBE224E92185CC49003D35B7 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +80,7 @@
 		FBE224F42185CC49003D35B7 /* ZombieConga */ = {
 			isa = PBXGroup;
 			children = (
+				FBDE2F232188629A006628D5 /* Sounds */,
 				FBE224F52185CC49003D35B7 /* AppDelegate.swift */,
 				FBE224FB2185CC49003D35B7 /* GameScene.swift */,
 				FBDE2F21218755A5006628D5 /* MyUtils.swift */,
@@ -128,8 +151,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBDE2F2A2188629A006628D5 /* lose.wav in Resources */,
 				FBE225012185CC49003D35B7 /* Main.storyboard in Resources */,
+				FBDE2F2D2188629A006628D5 /* backgroundMusic.mp3 in Resources */,
+				FBDE2F292188629A006628D5 /* win.wav in Resources */,
+				FBDE2F2B2188629A006628D5 /* hitCat.wav in Resources */,
 				FBE225032185CC4A003D35B7 /* Assets.xcassets in Resources */,
+				FBDE2F2C2188629A006628D5 /* hitCatLady.wav in Resources */,
 				FBE225062185CC4A003D35B7 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
