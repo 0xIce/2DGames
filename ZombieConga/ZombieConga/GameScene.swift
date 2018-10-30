@@ -65,6 +65,11 @@ class GameScene: SKScene {
         }),
                          SKAction.wait(forDuration: 2.0)])))
     
+    run(SKAction.repeatForever(SKAction.sequence([SKAction.run { [weak self] in
+      self?.spawnCat()
+      },
+                                                  SKAction.wait(forDuration: 1.0)])))
+    
     debugDrawPlayableArea()
   }
   
@@ -175,6 +180,20 @@ class GameScene: SKScene {
     let actionMove = SKAction.moveTo(x: -enemy.size.width/2, duration: 2.0)
     let actionRemove = SKAction.removeFromParent()
     enemy.run(SKAction.sequence([actionMove, actionRemove]))
+  }
+  
+  func spawnCat() {
+    let cat = SKSpriteNode(imageNamed: "cat")
+    cat.position = CGPoint(x: CGFloat.random(min: playableRect.minX, max: playableRect.maxX), y: CGFloat.random(min: playableRect.minY, max: playableRect.maxY))
+    cat.setScale(0)
+    addChild(cat)
+    
+    let appear = SKAction.scale(to: 1.0, duration: 0.5)
+    let wait = SKAction.wait(forDuration: 10.0)
+    let disappear = SKAction.scale(to: 0, duration: 0.5)
+    let removeFromParent = SKAction.removeFromParent()
+    let actions = [appear, wait, disappear, removeFromParent]
+    cat.run(SKAction.sequence(actions))
   }
   
   func startZombieAnimation() {
