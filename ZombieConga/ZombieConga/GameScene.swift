@@ -24,6 +24,8 @@ class GameScene: SKScene {
   let enemyCollisionSound: SKAction = SKAction.playSoundFileNamed("hitCatLady.wav", waitForCompletion: false)
   
   var isZombieInvincible = false
+  var lives = 5
+  var gameOver = false
   
   private lazy var zombie: SKSpriteNode = {
     let node = SKSpriteNode(imageNamed: "zombie1")
@@ -92,6 +94,18 @@ class GameScene: SKScene {
     }
     boundsCheckZombie()
     moveTrain()
+    
+    if lives <= 0,
+      !gameOver {
+      gameOver = true
+      print("You lose!")
+    }
+    
+    if trainCount >= 15,
+      !gameOver {
+      gameOver = true
+      print("You win!")
+    }
   }
   
   override func didEvaluateActions() {
@@ -244,6 +258,8 @@ class GameScene: SKScene {
   func zombieHit(enemy: SKSpriteNode) {
     enemy.removeFromParent()
     blinkZombie()
+    loseCats()
+    lives -= 1
 //    run(SKAction.playSoundFileNamed("hitCatLady.wav", waitForCompletion: false))
     run(enemyCollisionSound)
   }
@@ -292,8 +308,10 @@ class GameScene: SKScene {
   }
   
   func moveTrain() {
+    var trainCount = 0
     var targetPosition = zombie.position
     enumerateChildNodes(withName: "train") { (node, _) in
+      trainCount += 1
       if !node.hasActions() {
         let actionDuration = 0.3
         let offset = targetPosition - node.position
@@ -304,6 +322,26 @@ class GameScene: SKScene {
         node.run(moveAction)
       }
       targetPosition = node.position
+    }
+  }
+  
+  func loseCats() {
+    var losedCats = 0
+    enumerateChildNodes(withName: "train") { (node, stop) in
+      let randomSpot = node.position + CGFloat.random(min: -100, max: 100)
+      
+      node.name = nil
+      node.run(SKAction.sequence([
+        SKAction.group([
+          SKAction.rotate(byAngle: π * 4, duration: 1.0),
+          SKAction.scale(to: 0, duration: 1.0),
+          SKAction.move(to: randomSpot, duration: 1.0)]),
+          SKAction.removeFromParent()]))
+      
+      losedCats += 1
+      if losedCats >= 2 {
+        stop[0] = true
+      }
     }
   }
 }
