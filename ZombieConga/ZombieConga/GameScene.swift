@@ -20,7 +20,7 @@ class GameScene: SKScene {
   let playableRect: CGRect
   
   private lazy var zombie: SKSpriteNode = {
-    let node = SKSpriteNode(imageNamed: "zombie")
+    let node = SKSpriteNode(imageNamed: "zombie1")
     return node
   }()
   
@@ -46,6 +46,7 @@ class GameScene: SKScene {
     zombie.position = CGPoint(x: 400, y: 400)
 //    zombie.setScale(2.0)
     addChild(zombie)
+    spawnEnemy()
     
     debugDrawPlayableArea()
   }
@@ -72,12 +73,12 @@ class GameScene: SKScene {
       dt = 0
     }
     lastUpdateTime = currentTime
-    print("\(dt * 1000) milliseconds since lasst update")
+//    print("\(dt * 1000) milliseconds since lasst update")
   }
   
   func move(sprite: SKSpriteNode, velocity: CGPoint) {
     let amountToMove = velocity * CGFloat(dt)
-    print("Amount to move: \(amountToMove)")
+//    print("Amount to move: \(amountToMove)")
     
     sprite.position += amountToMove
   }
@@ -121,6 +122,21 @@ class GameScene: SKScene {
       zombie.position.y = topRight.y
       velocity.y = -velocity.y
     }
+  }
+  
+  func spawnEnemy() {
+    let enemy = SKSpriteNode(imageNamed: "enemy")
+    enemy.position = CGPoint(x: size.width + enemy.size.width/2, y: size.height/2)
+    addChild(enemy)
+    
+    let actionMidMove = SKAction.move(to: CGPoint(x: size.width/2, y: playableRect.minY + enemy.size.height/2), duration: 1.0)
+    let actionMove = SKAction.move(to: CGPoint(x: -enemy.size.width/2, y: enemy.position.y), duration: 1.0)
+    let wait = SKAction.wait(forDuration: 0.25)
+    let logMessage = SKAction.run {
+      print("Reached bottom!")
+    }
+    let sequence = SKAction.sequence([actionMidMove, logMessage, wait, actionMove])
+    enemy.run(sequence)
   }
 }
 
