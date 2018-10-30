@@ -46,7 +46,12 @@ class GameScene: SKScene {
     zombie.position = CGPoint(x: 400, y: 400)
 //    zombie.setScale(2.0)
     addChild(zombie)
-    spawnEnemy()
+//    spawnEnemy()
+    run(SKAction.repeatForever(
+      SKAction.sequence([SKAction.run({ [weak self] in
+        self?.spawnEnemy()
+        }),
+                         SKAction.wait(forDuration: 2.0)])))
     
     debugDrawPlayableArea()
   }
@@ -124,6 +129,7 @@ class GameScene: SKScene {
     }
   }
   
+  /** test action
   func spawnEnemy() {
     let enemy = SKSpriteNode(imageNamed: "enemy")
     enemy.position = CGPoint(x: size.width + enemy.size.width/2, y: size.height/2)
@@ -142,6 +148,18 @@ class GameScene: SKScene {
 //    enemy.run(sequence)
     let repeatAction = SKAction.repeatForever(sequence)
     enemy.run(repeatAction)
+  }
+ */
+  
+  func spawnEnemy() {
+    let enemy = SKSpriteNode(imageNamed: "enemy")
+    enemy.position = CGPoint(x: size.width + enemy.size.width/2,
+                             y: CGFloat.random(min: playableRect.minY + enemy.size.height/2, max: playableRect.maxY - enemy.size.height/2))
+    
+    addChild(enemy)
+    
+    let actionMove = SKAction.moveTo(x: -enemy.size.width/2, duration: 2.0)
+    enemy.run(actionMove)
   }
 }
 
