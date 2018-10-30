@@ -252,17 +252,18 @@ class GameScene: SKScene {
       zombieHit(cat: cat)
     }
 
-    if !isZombieInvincible {
-      var hitEnemies: [SKSpriteNode] = []
-      enumerateChildNodes(withName: "enemy") { (node, _) in
-        let enemy = node as! SKSpriteNode
-        if node.frame.insetBy(dx: 20, dy: 20).intersects(self.zombie.frame) {
-          hitEnemies.append(enemy)
-        }
+    if isZombieInvincible {
+      return
+    }
+    var hitEnemies: [SKSpriteNode] = []
+    enumerateChildNodes(withName: "enemy") { (node, _) in
+      let enemy = node as! SKSpriteNode
+      if node.frame.insetBy(dx: 20, dy: 20).intersects(self.zombie.frame) {
+        hitEnemies.append(enemy)
       }
-      for enemy in hitEnemies {
-        zombieHit(enemy: enemy)
-      }
+    }
+    for enemy in hitEnemies {
+      zombieHit(enemy: enemy)
     }
   }
   
@@ -275,9 +276,11 @@ class GameScene: SKScene {
       let remainder = Double(elapsedTime).truncatingRemainder(dividingBy: slice)
       node.isHidden = remainder > slice / 2
     }
-    zombie.run(blinkAction) { [weak self] in
+    let setHidden = SKAction.run { [weak self] in
+      self?.zombie.isHidden = false
       self?.isZombieInvincible = false
     }
+    zombie.run(SKAction.sequence([blinkAction, setHidden]))
   }
 }
 
