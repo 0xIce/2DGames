@@ -19,6 +19,8 @@ class GameScene: SKScene {
   
   let playableRect: CGRect
   
+  let zombieAnimation: SKAction
+  
   private lazy var zombie: SKSpriteNode = {
     let node = SKSpriteNode(imageNamed: "zombie1")
     return node
@@ -29,6 +31,15 @@ class GameScene: SKScene {
     let playableHeight = size.width / maxAspectRatio
     let playableMargin = (size.height - playableHeight)/2.0
     playableRect = CGRect(x: 0, y: playableMargin, width: size.width, height: playableHeight)
+    
+    var textures: [SKTexture] = []
+    for i in 1...4 {
+      textures.append(SKTexture(imageNamed: "zombie\(i)"))
+    }
+    textures.append(textures[2])
+    textures.append(textures[1])
+    zombieAnimation = SKAction.animate(with: textures, timePerFrame: 0.1)
+    
     super.init(size: size)
   }
   
@@ -46,6 +57,7 @@ class GameScene: SKScene {
     zombie.position = CGPoint(x: 400, y: 400)
 //    zombie.setScale(2.0)
     addChild(zombie)
+    zombie.run(SKAction.repeatForever(zombieAnimation))
 //    spawnEnemy()
     run(SKAction.repeatForever(
       SKAction.sequence([SKAction.run({ [weak self] in
