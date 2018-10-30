@@ -19,8 +19,8 @@ class GameScene: SKScene {
   
   let playableRect: CGRect
   
-  private lazy var zombie1: SKSpriteNode = {
-    let node = SKSpriteNode(imageNamed: "zombie1")
+  private lazy var zombie: SKSpriteNode = {
+    let node = SKSpriteNode(imageNamed: "zombie")
     return node
   }()
   
@@ -43,9 +43,9 @@ class GameScene: SKScene {
     addChild(background)
     background.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
     
-    zombie1.position = CGPoint(x: 400, y: 400)
-//    zombie1.setScale(2.0)
-    addChild(zombie1)
+    zombie.position = CGPoint(x: 400, y: 400)
+//    zombie.setScale(2.0)
+    addChild(zombie)
     
     debugDrawPlayableArea()
   }
@@ -53,14 +53,14 @@ class GameScene: SKScene {
   // MARK: - actions
   override func update(_ currentTime: TimeInterval) {
     calculate(currentTime)
-    //    zombie1.position = CGPoint(x: zombie1.position.x + 8, y: zombie1.position.y)
-    //    move(sprite: zombie1, velocity: CGPoint(x: zombieMovePointsPerSec, y: 0))
-    if (lastTouchLocation - zombie1.position).length <= zombieMovePointsPerSec * CGFloat(dt) {
-      zombie1.position = lastTouchLocation
+    //    zombie.position = CGPoint(x: zombie.position.x + 8, y: zombie.position.y)
+    //    move(sprite: zombie, velocity: CGPoint(x: zombieMovePointsPerSec, y: 0))
+    if (lastTouchLocation - zombie.position).length <= zombieMovePointsPerSec * CGFloat(dt) {
+      zombie.position = lastTouchLocation
       velocity = .zero
     } else {
-      move(sprite: zombie1, velocity: velocity)
-      rotate(sprite: zombie1, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
+      move(sprite: zombie, velocity: velocity)
+      rotate(sprite: zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
     }
     boundsCheckZombie()
   }
@@ -102,23 +102,23 @@ class GameScene: SKScene {
     let bottomLeft = CGPoint(x: 0, y: playableRect.minY)
     let topRight = CGPoint(x: size.width, y: playableRect.maxY)
     
-    if zombie1.position.x <= bottomLeft.x {
-      zombie1.position.x = bottomLeft.x
+    if zombie.position.x <= bottomLeft.x {
+      zombie.position.x = bottomLeft.x
       velocity.x = -velocity.x
     }
     
-    if zombie1.position.x >= topRight.x {
-      zombie1.position.x = topRight.x
+    if zombie.position.x >= topRight.x {
+      zombie.position.x = topRight.x
       velocity.x = -velocity.x
     }
     
-    if zombie1.position.y <= bottomLeft.y {
-      zombie1.position.y = bottomLeft.y
+    if zombie.position.y <= bottomLeft.y {
+      zombie.position.y = bottomLeft.y
       velocity.y = -velocity.y
     }
     
-    if zombie1.position.y >= topRight.y {
-      zombie1.position.y = topRight.y
+    if zombie.position.y >= topRight.y {
+      zombie.position.y = topRight.y
       velocity.y = -velocity.y
     }
   }
@@ -128,7 +128,7 @@ class GameScene: SKScene {
 // MARK: - touches
 extension GameScene {
   func sceneTouched(touchLocation: CGPoint) {
-    move(sprite: zombie1, toward: touchLocation)
+    move(sprite: zombie, toward: touchLocation)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
