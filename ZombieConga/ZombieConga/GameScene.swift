@@ -27,6 +27,7 @@ class GameScene: SKScene {
   
   private lazy var zombie: SKSpriteNode = {
     let node = SKSpriteNode(imageNamed: "zombie1")
+    node.zPosition = 100
     return node
   }()
   
@@ -90,6 +91,7 @@ class GameScene: SKScene {
       rotate(sprite: zombie, direction: velocity, rotateRadiansPerSec: zombieRotateRadiansPerSec)
     }
     boundsCheckZombie()
+    moveTrain()
   }
   
   override func didEvaluateActions() {
@@ -228,7 +230,13 @@ class GameScene: SKScene {
   }
   
   func zombieHit(cat: SKSpriteNode) {
-    cat.removeFromParent()
+//    cat.removeFromParent()
+    cat.name = "train"
+    cat.removeAllActions()
+    cat.setScale(1.0)
+    cat.zRotation = 0.0
+    let greenAction = SKAction.colorize(with: .green, colorBlendFactor: 1.0, duration: 0.2)
+    cat.run(greenAction)
 //    run(SKAction.playSoundFileNamed("hitCat.wav", waitForCompletion: false))
     run(catCollisionSound)
   }
@@ -281,6 +289,22 @@ class GameScene: SKScene {
       self?.isZombieInvincible = false
     }
     zombie.run(SKAction.sequence([blinkAction, setHidden]))
+  }
+  
+  func moveTrain() {
+    var targetPosition = zombie.position
+    enumerateChildNodes(withName: "train") { (node, _) in
+      if !node.hasActions() {
+        let actionDuration = 0.3
+        let offset = targetPosition - node.position
+        let direction = offset.normalized
+        let amountToMovePerSec = direction * self.zombieMovePointsPerSec
+        let amountToMove = amountToMovePerSec * CGFloat(actionDuration)
+        let moveAction = SKAction.moveBy(x: amountToMove.x, y: amountToMove.y, duration: actionDuration)
+        node.run(moveAction)
+      }
+      targetPosition = node.position
+    }
   }
 }
 
