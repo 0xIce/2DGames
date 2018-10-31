@@ -31,6 +31,7 @@ class GameScene: SKScene {
   
   let cameraMovePointPerSec: CGFloat = 200.0
   
+  
   var cameraRect: CGRect {
     let x = cameraNode.position.x - size.width / 2 + (size.width - playableRect.width) / 2
     let y = cameraNode.position.y - size.height / 2 + (size.height - playableRect.height) / 2
@@ -41,6 +42,15 @@ class GameScene: SKScene {
     let node = SKSpriteNode(imageNamed: "zombie1")
     node.zPosition = 100
     return node
+  }()
+  
+  private lazy var livesLabel: SKLabelNode = {
+    let l = SKLabelNode(fontNamed: "Chalkduster")
+    l.text = "Lives: X"
+    l.fontColor = SKColor.black
+    l.fontSize = 100
+    l.zPosition = 150
+    return l
   }()
   
   override init(size: CGSize) {
@@ -97,6 +107,11 @@ class GameScene: SKScene {
     addChild(cameraNode)
     camera = cameraNode
     cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
+    
+    livesLabel.horizontalAlignmentMode = .left
+    livesLabel.verticalAlignmentMode = .bottom
+    livesLabel.position = CGPoint(x: -playableRect.size.width / 2 + CGFloat(20), y: -playableRect.size.height / 2 + CGFloat(20))
+    cameraNode.addChild(livesLabel)
 //    debugDrawPlayableArea()
   }
   
