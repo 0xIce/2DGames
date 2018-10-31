@@ -45,7 +45,7 @@ class GameScene: SKScene {
   }()
   
   private lazy var livesLabel: SKLabelNode = {
-    let l = SKLabelNode(fontNamed: "Chalkduster")
+    let l = SKLabelNode(fontNamed: "Glimstick") // custom font
     l.text = "Lives: X"
     l.fontColor = SKColor.black
     l.fontSize = 100
@@ -131,6 +131,8 @@ class GameScene: SKScene {
     boundsCheckZombie()
     moveTrain()
     moveCamera()
+    
+    livesLabel.text = "Lives: \(lives)"
     
     if lives <= 0,
       !gameOver {
