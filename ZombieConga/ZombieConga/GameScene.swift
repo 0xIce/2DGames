@@ -53,6 +53,15 @@ class GameScene: SKScene {
     return l
   }()
   
+  private lazy var catsLabel: SKLabelNode = {
+    let l = SKLabelNode(fontNamed: "Glimstick")
+    l.text = "Cats: X"
+    l.fontColor = SKColor.black
+    l.fontSize = 100
+    l.zPosition = 150
+    return l
+  }()
+  
   override init(size: CGSize) {
     let maxAspectRatio: CGFloat = 16.0/9.0
     let playableHeight = size.width / maxAspectRatio
@@ -112,6 +121,11 @@ class GameScene: SKScene {
     livesLabel.verticalAlignmentMode = .bottom
     livesLabel.position = CGPoint(x: -playableRect.size.width / 2 + CGFloat(20), y: -playableRect.size.height / 2 + CGFloat(20))
     cameraNode.addChild(livesLabel)
+    
+    catsLabel.horizontalAlignmentMode = .right
+    catsLabel.verticalAlignmentMode = .bottom
+    catsLabel.position = CGPoint(x: playableRect.size.width / 2 - CGFloat(20), y: -playableRect.size.height / 2 + CGFloat(20))
+    cameraNode.addChild(catsLabel)
 //    debugDrawPlayableArea()
   }
   
@@ -370,6 +384,8 @@ class GameScene: SKScene {
       }
       targetPosition = node.position
     }
+    
+    catsLabel.text = "Cats: \(trainCount)"
     
     if trainCount >= 5,
       !gameOver {
