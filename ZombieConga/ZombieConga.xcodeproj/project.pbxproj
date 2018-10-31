@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBD22FBB21898B2900BCBF9D /* GLIMSTIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FBA21898B2900BCBF9D /* GLIMSTIC.TTF */; };
 		FBDE2F22218755A5006628D5 /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDE2F21218755A5006628D5 /* MyUtils.swift */; };
 		FBDE2F292188629A006628D5 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBDE2F242188629A006628D5 /* win.wav */; };
 		FBDE2F2A2188629A006628D5 /* lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = FBDE2F252188629A006628D5 /* lose.wav */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FBD22FBA21898B2900BCBF9D /* GLIMSTIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GLIMSTIC.TTF; sourceTree = "<group>"; };
 		FBDE2F21218755A5006628D5 /* MyUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		FBDE2F242188629A006628D5 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 		FBDE2F252188629A006628D5 /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lose.wav; sourceTree = "<group>"; };
@@ -53,6 +55,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FBD22FB921898AFB00BCBF9D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FBDE2F232188629A006628D5 /* Sounds */,
+				FBD22FBA21898B2900BCBF9D /* GLIMSTIC.TTF */,
+				FBE225022185CC4A003D35B7 /* Assets.xcassets */,
+				FBE224FF2185CC49003D35B7 /* Main.storyboard */,
+				FBE225042185CC4A003D35B7 /* LaunchScreen.storyboard */,
+				FBE225072185CC4A003D35B7 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FBDE2F232188629A006628D5 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,17 +99,13 @@
 		FBE224F42185CC49003D35B7 /* ZombieConga */ = {
 			isa = PBXGroup;
 			children = (
-				FBDE2F232188629A006628D5 /* Sounds */,
 				FBE224F52185CC49003D35B7 /* AppDelegate.swift */,
 				FBE224FB2185CC49003D35B7 /* GameScene.swift */,
 				FBDE2F30218930C3006628D5 /* MainMenuScene.swift */,
 				FBDE2F2E2188BD4F006628D5 /* GameOverScene.swift */,
 				FBDE2F21218755A5006628D5 /* MyUtils.swift */,
 				FBE224FD2185CC49003D35B7 /* GameViewController.swift */,
-				FBE224FF2185CC49003D35B7 /* Main.storyboard */,
-				FBE225022185CC4A003D35B7 /* Assets.xcassets */,
-				FBE225042185CC4A003D35B7 /* LaunchScreen.storyboard */,
-				FBE225072185CC4A003D35B7 /* Info.plist */,
+				FBD22FB921898AFB00BCBF9D /* Resources */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";
@@ -157,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD22FBB21898B2900BCBF9D /* GLIMSTIC.TTF in Resources */,
 				FBDE2F2A2188629A006628D5 /* lose.wav in Resources */,
 				FBE225012185CC49003D35B7 /* Main.storyboard in Resources */,
 				FBDE2F2D2188629A006628D5 /* backgroundMusic.mp3 in Resources */,
