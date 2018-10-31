@@ -77,6 +77,7 @@ class GameScene: SKScene {
       },
                                                   SKAction.wait(forDuration: 1.0)])))
     
+    playBackgroundMusic(filename: "backgroundMusic.mp3")
     debugDrawPlayableArea()
   }
   
@@ -99,6 +100,7 @@ class GameScene: SKScene {
       !gameOver {
       gameOver = true
       print("You lose!")
+      backgroundMusicPlayer.stop()
       let gameOverScene = GameOverScene(size: size, won: false)
       let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
       view?.presentScene(gameOverScene, transition: reveal)
@@ -325,6 +327,7 @@ class GameScene: SKScene {
       !gameOver {
       gameOver = true
       print("You win!")
+      backgroundMusicPlayer.stop()
       let gameOverScene = GameOverScene(size: size, won: true)
       let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
       view?.presentScene(gameOverScene, transition: reveal)
