@@ -15,6 +15,11 @@
 		FBD22FD42189A53200BCBF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FD22189A53200BCBF9D /* Main.storyboard */; };
 		FBD22FD62189A53300BCBF9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FD52189A53300BCBF9D /* Assets.xcassets */; };
 		FBD22FD92189A53300BCBF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FD72189A53300BCBF9D /* LaunchScreen.storyboard */; };
+		FBD22FE72189A99D00BCBF9D /* mrreow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE22189A99D00BCBF9D /* mrreow.mp3 */; };
+		FBD22FE82189A99D00BCBF9D /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE32189A99D00BCBF9D /* pop.mp3 */; };
+		FBD22FE92189A99D00BCBF9D /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE42189A99D00BCBF9D /* win.mp3 */; };
+		FBD22FEA2189A99D00BCBF9D /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE52189A99D00BCBF9D /* lose.mp3 */; };
+		FBD22FEB2189A99D00BCBF9D /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE62189A99D00BCBF9D /* backgroundMusic.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		FBD22FD52189A53300BCBF9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBD22FD82189A53300BCBF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBD22FDA2189A53300BCBF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBD22FE22189A99D00BCBF9D /* mrreow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mrreow.mp3; sourceTree = "<group>"; };
+		FBD22FE32189A99D00BCBF9D /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
+		FBD22FE42189A99D00BCBF9D /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
+		FBD22FE52189A99D00BCBF9D /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
+		FBD22FE62189A99D00BCBF9D /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +83,25 @@
 		FBD22FE02189A5CA00BCBF9D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FBD22FE12189A99D00BCBF9D /* Sounds */,
 				FBD22FD22189A53200BCBF9D /* Main.storyboard */,
 				FBD22FD52189A53300BCBF9D /* Assets.xcassets */,
 				FBD22FD72189A53300BCBF9D /* LaunchScreen.storyboard */,
 				FBD22FDA2189A53300BCBF9D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FBD22FE12189A99D00BCBF9D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FBD22FE22189A99D00BCBF9D /* mrreow.mp3 */,
+				FBD22FE32189A99D00BCBF9D /* pop.mp3 */,
+				FBD22FE42189A99D00BCBF9D /* win.mp3 */,
+				FBD22FE52189A99D00BCBF9D /* lose.mp3 */,
+				FBD22FE62189A99D00BCBF9D /* backgroundMusic.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +164,13 @@
 			files = (
 				FBD22FD42189A53200BCBF9D /* Main.storyboard in Resources */,
 				FBD22FCB2189A53200BCBF9D /* GameScene.sks in Resources */,
+				FBD22FEA2189A99D00BCBF9D /* lose.mp3 in Resources */,
 				FBD22FD62189A53300BCBF9D /* Assets.xcassets in Resources */,
+				FBD22FE92189A99D00BCBF9D /* win.mp3 in Resources */,
 				FBD22FD92189A53300BCBF9D /* LaunchScreen.storyboard in Resources */,
+				FBD22FE72189A99D00BCBF9D /* mrreow.mp3 in Resources */,
+				FBD22FE82189A99D00BCBF9D /* pop.mp3 in Resources */,
+				FBD22FEB2189A99D00BCBF9D /* backgroundMusic.mp3 in Resources */,
 				FBD22FCD2189A53200BCBF9D /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
