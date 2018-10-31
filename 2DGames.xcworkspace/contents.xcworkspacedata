@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ActionsCatalog/ActionsCatalog.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ZombieConga/ZombieConga.xcodeproj">
    </FileRef>
 </Workspace>
