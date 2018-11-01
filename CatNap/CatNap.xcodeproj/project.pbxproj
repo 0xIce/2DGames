@@ -22,6 +22,7 @@
 		FBD22FEA2189A99D00BCBF9D /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE52189A99D00BCBF9D /* lose.mp3 */; };
 		FBD22FEB2189A99D00BCBF9D /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE62189A99D00BCBF9D /* backgroundMusic.mp3 */; };
 		FBFACACA218AE322009686A9 /* CatCurl.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBFACAC9218AE322009686A9 /* CatCurl.sks */; };
+		FBFACACC218AE48C009686A9 /* CatWakeUp.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBFACACB218AE48C009686A9 /* CatWakeUp.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FBD22FE52189A99D00BCBF9D /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
 		FBD22FE62189A99D00BCBF9D /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		FBFACAC9218AE322009686A9 /* CatCurl.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatCurl.sks; sourceTree = "<group>"; };
+		FBFACACB218AE48C009686A9 /* CatWakeUp.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatWakeUp.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				FBD22FCA2189A53200BCBF9D /* GameScene.sks */,
 				FB021C0D2189CDC600DA185B /* Cat.sks */,
 				FBFACAC9218AE322009686A9 /* CatCurl.sks */,
+				FBFACACB218AE48C009686A9 /* CatWakeUp.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				FB021C0E2189CDC600DA185B /* Cat.sks in Resources */,
 				FBD22FCB2189A53200BCBF9D /* GameScene.sks in Resources */,
 				FBD22FEA2189A99D00BCBF9D /* lose.mp3 in Resources */,
+				FBFACACC218AE48C009686A9 /* CatWakeUp.sks in Resources */,
 				FBFACACA218AE322009686A9 /* CatCurl.sks in Resources */,
 				FBD22FD62189A53300BCBF9D /* Assets.xcassets in Resources */,
 				FBD22FE92189A99D00BCBF9D /* win.mp3 in Resources */,
