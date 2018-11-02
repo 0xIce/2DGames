@@ -1,6 +1,9 @@
 import PlaygroundSupport
 import SpriteKit
 
+var blowingRight = true
+var windForce = CGVector(dx: 50, dy: 0)
+
 let sceneView = SKView(frame: CGRect(x: 0, y: 0, width: 480, height: 320))
 let scene = SKScene(size: CGSize(width: 480, height: 320))
 
@@ -39,7 +42,7 @@ delay(seconds: 2.0) {
       SKAction.run(spawnSand),
       SKAction.wait(forDuration: 0.1)]),
     count: 100))
-  delay(seconds: 12, completion: shake)
+//  delay(seconds: 12, completion: shake)
 }
 scene.physicsBody = SKPhysicsBody(edgeLoopFrom: scene.frame)
 
@@ -79,5 +82,27 @@ scene.addChild(circle)
 scene.addChild(triangle)
 scene.addChild(l)
 
+extension SKScene {
+  @objc func applyWindForce() {
+    enumerateChildNodes(withName: "sand") { (node, _) in
+      node.physicsBody?.applyForce(windForce)
+    }
+    enumerateChildNodes(withName: "shape") { (node, _) in
+      node.physicsBody?.applyForce(windForce)
+    }
+  }
+  
+  @objc func switchWindDirection() {
+    blowingRight.toggle()
+    windForce = CGVector(dx: blowingRight ? 50 : -50, dy: 0)
+  }
+}
+
+Timer.scheduledTimer(timeInterval: 0.05, target: scene, selector: #selector(SKScene.applyWindForce), userInfo: nil, repeats: true)
+Timer.scheduledTimer(timeInterval: 3.0, target: scene, selector: #selector(SKScene.switchWindDirection), userInfo: nil, repeats: true)
+
+
 PlaygroundPage.current.needsIndefiniteExecution = true
 PlaygroundPage.current.liveView = sceneView
+
+
