@@ -13,6 +13,13 @@ protocol EventListenerNode {
   func didMoveToScene()
 }
 
+struct PhysicsCategory {
+  static let None: UInt32 = 0
+  static let Cat: UInt32 = 0b1
+  static let Block: UInt32 = 0b10
+  static let Bed: UInt32 = 0b100
+}
+
 class GameScene: SKScene {
   var bedNode: BedNode!
   var catNode: CatNode!

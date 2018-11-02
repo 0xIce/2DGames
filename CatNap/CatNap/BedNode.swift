@@ -16,5 +16,7 @@ extension BedNode: EventListenerNode {
   func didMoveToScene() {
     physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 30))
     physicsBody?.isDynamic = false
+    physicsBody?.categoryBitMask = PhysicsCategory.Bed
+//    physicsBody?.collisionBitMask = PhysicsCategory.None
   }
 }
