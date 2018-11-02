@@ -30,5 +30,10 @@ class GameScene: SKScene {
         eventListenerNode.didMoveToScene()
       }
     }
+    
+    bedNode = childNode(withName: "bed") as! BedNode
+    catNode = childNode(withName: "//cat_body") as! CatNode
+//    bedNode.setScale(1.5)
+//    catNode.setScale(1.5)
   }
 }

@@ -14,6 +14,7 @@ class BedNode: SKSpriteNode {
 
 extension BedNode: EventListenerNode {
   func didMoveToScene() {
-    print("bed added to scene")
+    physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 30))
+    physicsBody?.isDynamic = false
   }
 }
