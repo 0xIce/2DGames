@@ -60,6 +60,9 @@ let circle = SKSpriteNode(imageNamed: "circle")
 circle.name = "shape"
 circle.position = CGPoint(x: scene.size.width * 0.5, y: scene.size.height * 0.5)
 circle.physicsBody = SKPhysicsBody(circleOfRadius: circle.size.width / 2)
+circle.physicsBody?.isDynamic = false
+circle.run(SKAction.repeatForever(SKAction.sequence([SKAction.moveTo(x: circle.size.width / 2, duration: 3.0),
+                                                     SKAction.moveTo(x: scene.size.width - circle.size.width / 2, duration: 3.0)])))
 
 let triangle = SKSpriteNode(imageNamed: "triangle")
 triangle.name = "shape"
