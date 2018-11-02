@@ -1,0 +1,19 @@
+//
+//  BedNode.swift
+//  CatNap
+//
+//  Created by 马红奇 on 2018/11/2.
+//  Copyright © 2018 hotch. All rights reserved.
+//
+
+import SpriteKit
+
+class BedNode: SKSpriteNode {
+  
+}
+
+extension BedNode: EventListenerNode {
+  func didMoveToScene() {
+    print("bed added to scene")
+  }
+}
