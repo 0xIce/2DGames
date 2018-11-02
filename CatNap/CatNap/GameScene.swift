@@ -13,6 +13,10 @@ protocol EventListenerNode {
   func didMoveToScene()
 }
 
+protocol InteractiveNode {
+  func interact()
+}
+
 struct PhysicsCategory {
   static let None: UInt32 = 0
   static let Cat: UInt32 = 0b1
