@@ -35,5 +35,7 @@ class GameScene: SKScene {
     catNode = childNode(withName: "//cat_body") as! CatNode
 //    bedNode.setScale(1.5)
 //    catNode.setScale(1.5)
+    
+//    SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
   }
 }

@@ -15,6 +15,6 @@ class CatNode: SKSpriteNode {
 extension CatNode: EventListenerNode {
   func didMoveToScene() {
     let catBodyTexture = SKTexture(imageNamed: "cat_body_outline")
-    physicsBody = SKPhysicsBody(texture: catBodyTexture, size: catBodyTexture.size())
+    parent?.physicsBody = SKPhysicsBody(texture: catBodyTexture, size: catBodyTexture.size())
   }
 }
