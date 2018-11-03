@@ -57,8 +57,8 @@ class GameScene: SKScene {
   }
   
   func inGameMessage(text: String) {
-    let messageNode = MessageNode(text: text)
-    messageNode.position = CGPoint(x: frame.minX, y: frame.minY)
+    let messageNode = MessageNode(message: text)
+    messageNode.position = CGPoint(x: frame.midX, y: frame.midY)
     addChild(messageNode)
   }
   
@@ -107,9 +107,5 @@ extension GameScene: SKPhysicsContactDelegate {
     default:
       break
     }
-  }
-  
-  func didEnd(_ contact: SKPhysicsContact) {
-    
   }
 }
