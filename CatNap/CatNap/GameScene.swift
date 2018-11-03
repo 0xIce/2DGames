@@ -36,6 +36,8 @@ class GameScene: SKScene {
   
   var currentLevel = 0
   
+  var hookBaseNode: HookBaseNode?
+  
   // MARK: - loop
   override func didMove(to view: SKView) {
     let maxAspectRatio: CGFloat = 16.0 / 9.0
@@ -59,10 +61,16 @@ class GameScene: SKScene {
 //    catNode.setScale(1.5)
     
 //    SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
+    
+//    let rotationConstraint = SKConstraint.zRotation(SKRange(lowerLimit: -π/4, upperLimit: π/4))
+//    catNode.parent?.constraints = [rotationConstraint]
+    
+    hookBaseNode = childNode(withName: "hookBase") as? HookBaseNode
   }
   
   override func didSimulatePhysics() {
-    guard playable else {
+    guard playable,
+      hookBaseNode?.isHooked != true else {
       return
     }
     if abs(catNode.parent!.zRotation) > CGFloat(25).degreesToRadians() {
@@ -134,6 +142,8 @@ extension GameScene: SKPhysicsContactDelegate {
     case PhysicsCategory.Cat | PhysicsCategory.Edge:
       print("Fail")
       lose()
+    case PhysicsCategory.Cat | PhysicsCategory.Hook where hookBaseNode?.isHooked == false:
+      hookBaseNode?.hookCat(catPhysicsBody: catNode.parent!.physicsBody!)
     default:
       break
     }

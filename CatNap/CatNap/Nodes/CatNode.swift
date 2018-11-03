@@ -9,19 +9,8 @@
 import SpriteKit
 
 class CatNode: SKSpriteNode {
-  
-}
+  static let kCatTappedNotification = "kCatTappedNotification"
 
-extension CatNode: EventListenerNode {
-  func didMoveToScene() {
-    let catBodyTexture = SKTexture(imageNamed: "cat_body_outline")
-    parent?.physicsBody = SKPhysicsBody(texture: catBodyTexture, size: catBodyTexture.size())
-    
-    parent?.physicsBody?.categoryBitMask = PhysicsCategory.Cat
-    parent?.physicsBody?.collisionBitMask = PhysicsCategory.Block | PhysicsCategory.Edge | PhysicsCategory.Spring
-    parent?.physicsBody?.contactTestBitMask = PhysicsCategory.Bed | PhysicsCategory.Edge
-  }
-  
   func wakeUp() {
     for child in children {
       child.removeFromParent()
@@ -53,5 +42,29 @@ extension CatNode: EventListenerNode {
     
     run(SKAction.group([SKAction.move(to: localPoint, duration: 0.66),
                         SKAction.rotate(toAngle: -parent!.zRotation, duration: 0.5)]))
+  }
+  
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super.touchesEnded(touches, with: event)
+    interact()
+  }
+}
+
+extension CatNode: EventListenerNode {
+  func didMoveToScene() {
+    isUserInteractionEnabled = true
+    
+    let catBodyTexture = SKTexture(imageNamed: "cat_body_outline")
+    parent?.physicsBody = SKPhysicsBody(texture: catBodyTexture, size: catBodyTexture.size())
+    
+    parent?.physicsBody?.categoryBitMask = PhysicsCategory.Cat
+    parent?.physicsBody?.collisionBitMask = PhysicsCategory.Block | PhysicsCategory.Edge | PhysicsCategory.Spring
+    parent?.physicsBody?.contactTestBitMask = PhysicsCategory.Bed | PhysicsCategory.Edge
+  }
+}
+
+extension CatNode: InteractiveNode {
+  func interact() {
+    NotificationCenter.default.post(name: NSNotification.Name(CatNode.kCatTappedNotification), object: nil)
   }
 }
