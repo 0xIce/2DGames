@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB021C0E2189CDC600DA185B /* Cat.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB021C0D2189CDC600DA185B /* Cat.sks */; };
+		FB39CB93218DA81E00DD9F7B /* SpringNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39CB92218DA81E00DD9F7B /* SpringNode.swift */; };
 		FB4D75B1218C204700CE0FFD /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75B0218C204700CE0FFD /* BedNode.swift */; };
 		FB4D75B3218C29E000CE0FFD /* CatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75B2218C29E000CE0FFD /* CatNode.swift */; };
 		FB4D75C1218C904600CE0FFD /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75B5218C904600CE0FFD /* SKColor+Extensions.swift */; };
@@ -24,6 +25,7 @@
 		FB4D75CC218C904600CE0FFD /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75C0218C904600CE0FFD /* CGFloat+Extensions.swift */; };
 		FB4D75CE218C9BB800CE0FFD /* BlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */; };
 		FB4D75D0218CAF9C00CE0FFD /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */; };
+		FB4D75D3218DA47200CE0FFD /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB4D75D2218DA47200CE0FFD /* Level2.sks */; };
 		FBD22FC92189A53200BCBF9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD22FC82189A53200BCBF9D /* AppDelegate.swift */; };
 		FBD22FCB2189A53200BCBF9D /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FCA2189A53200BCBF9D /* Level1.sks */; };
 		FBD22FCF2189A53200BCBF9D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD22FCE2189A53200BCBF9D /* GameScene.swift */; };
@@ -42,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		FB021C0D2189CDC600DA185B /* Cat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cat.sks; sourceTree = "<group>"; };
+		FB39CB92218DA81E00DD9F7B /* SpringNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringNode.swift; sourceTree = "<group>"; };
 		FB4D75B0218C204700CE0FFD /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		FB4D75B2218C29E000CE0FFD /* CatNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatNode.swift; sourceTree = "<group>"; };
 		FB4D75B5218C904600CE0FFD /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		FB4D75C0218C904600CE0FFD /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
 		FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
+		FB4D75D2218DA47200CE0FFD /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
 		FBD22FC52189A53100BCBF9D /* CatNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD22FC82189A53200BCBF9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD22FCA2189A53200BCBF9D /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FBD22FCA2189A53200BCBF9D /* Level1.sks */,
+				FB4D75D2218DA47200CE0FFD /* Level2.sks */,
 				FB021C0D2189CDC600DA185B /* Cat.sks */,
 				FBFACAC9218AE322009686A9 /* CatCurl.sks */,
 				FBFACACB218AE48C009686A9 /* CatWakeUp.sks */,
@@ -124,6 +129,7 @@
 				FB4D75B2218C29E000CE0FFD /* CatNode.swift */,
 				FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */,
 				FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */,
+				FB39CB92218DA81E00DD9F7B /* SpringNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 				FB021C0E2189CDC600DA185B /* Cat.sks in Resources */,
 				FBD22FCB2189A53200BCBF9D /* Level1.sks in Resources */,
 				FBD22FEA2189A99D00BCBF9D /* lose.mp3 in Resources */,
+				FB4D75D3218DA47200CE0FFD /* Level2.sks in Resources */,
 				FBFACACC218AE48C009686A9 /* CatWakeUp.sks in Resources */,
 				FBFACACA218AE322009686A9 /* CatCurl.sks in Resources */,
 				FBD22FD62189A53300BCBF9D /* Assets.xcassets in Resources */,
@@ -278,6 +285,7 @@
 				FB4D75B1218C204700CE0FFD /* BedNode.swift in Sources */,
 				FB4D75C3218C904600CE0FFD /* Int+Extensions.swift in Sources */,
 				FBD22FD12189A53200BCBF9D /* GameViewController.swift in Sources */,
+				FB39CB93218DA81E00DD9F7B /* SpringNode.swift in Sources */,
 				FB4D75CC218C904600CE0FFD /* CGFloat+Extensions.swift in Sources */,
 				FB4D75CB218C904600CE0FFD /* Vector3.swift in Sources */,
 				FBD22FC92189A53200BCBF9D /* AppDelegate.swift in Sources */,

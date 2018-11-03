@@ -18,12 +18,13 @@ protocol InteractiveNode {
 }
 
 struct PhysicsCategory {
-  static let None: UInt32 = 0
-  static let Cat: UInt32 = 0b1
-  static let Block: UInt32 = 0b10
-  static let Bed: UInt32 = 0b100
-  static let Edge: UInt32 = 0b1000
-  static let Label: UInt32 = 0b10000
+  static let None:    UInt32 = 0
+  static let Cat:     UInt32 = 0b1
+  static let Block:   UInt32 = 0b10
+  static let Bed:     UInt32 = 0b100
+  static let Edge:    UInt32 = 0b1000
+  static let Label:   UInt32 = 0b10000
+  static let Spring:  UInt32 = 0b100000
 }
 
 class GameScene: SKScene {
