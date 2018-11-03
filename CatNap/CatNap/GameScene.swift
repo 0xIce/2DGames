@@ -48,8 +48,8 @@ class GameScene: SKScene {
       }
     }
     
-    bedNode = childNode(withName: "bed") as! BedNode
-    catNode = childNode(withName: "//cat_body") as! CatNode
+    bedNode = childNode(withName: "bed") as? BedNode
+    catNode = childNode(withName: "//cat_body") as? CatNode
 //    bedNode.setScale(1.5)
 //    catNode.setScale(1.5)
     
@@ -76,6 +76,18 @@ class GameScene: SKScene {
     inGameMessage(text: "Try again...")
     
     run(SKAction.afterDelay(5, runBlock: newGame))
+    catNode.wakeUp()
+  }
+  
+  func win() {
+    playable = false
+    SKTAudio.sharedInstance().pauseBackgroundMusic()
+    SKTAudio.sharedInstance().playSoundEffect("win.mp3")
+    
+    inGameMessage(text: "Nice job!")
+    
+    run(SKAction.afterDelay(3, runBlock: newGame))
+    catNode.curlAt(scenePoint: bedNode.position)
   }
 }
 
@@ -88,10 +100,10 @@ extension GameScene: SKPhysicsContactDelegate {
     switch collision {
     case PhysicsCategory.Cat | PhysicsCategory.Bed:
       print("Success")
+      win()
     case PhysicsCategory.Cat | PhysicsCategory.Edge:
       print("Fail")
       lose()
-      catNode.wakeUp()
     default:
       break
     }

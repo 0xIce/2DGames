@@ -117,10 +117,20 @@
 			path = SKTUtils;
 			sourceTree = "<group>";
 		};
+		FB4D75D1218D306D00CE0FFD /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				FB4D75B0218C204700CE0FFD /* BedNode.swift */,
+				FB4D75B2218C29E000CE0FFD /* CatNode.swift */,
+				FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */,
+				FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
 		FBD22FBC2189A53100BCBF9D = {
 			isa = PBXGroup;
 			children = (
-				FB4D75B4218C904600CE0FFD /* SKTUtils */,
 				FBD22FC72189A53200BCBF9D /* CatNap */,
 				FBD22FC62189A53100BCBF9D /* Products */,
 			);
@@ -137,14 +147,12 @@
 		FBD22FC72189A53200BCBF9D /* CatNap */ = {
 			isa = PBXGroup;
 			children = (
+				FB4D75B4218C904600CE0FFD /* SKTUtils */,
 				FB021C0C2189CD5D00DA185B /* Scenes */,
+				FB4D75D1218D306D00CE0FFD /* Nodes */,
 				FBD22FC82189A53200BCBF9D /* AppDelegate.swift */,
 				FBD22FCE2189A53200BCBF9D /* GameScene.swift */,
 				FBD22FD02189A53200BCBF9D /* GameViewController.swift */,
-				FB4D75B0218C204700CE0FFD /* BedNode.swift */,
-				FB4D75B2218C29E000CE0FFD /* CatNode.swift */,
-				FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */,
-				FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */,
 				FBD22FE02189A5CA00BCBF9D /* Resources */,
 			);
 			path = CatNap;
