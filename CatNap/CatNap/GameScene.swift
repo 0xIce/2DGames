@@ -32,6 +32,8 @@ class GameScene: SKScene {
   
   var playable = true
   
+  var currentLevel = 0
+  
   // MARK: - loop
   override func didMove(to view: SKView) {
     let maxAspectRatio: CGFloat = 16.0 / 9.0
@@ -74,7 +76,8 @@ class GameScene: SKScene {
   }
   
   func newGame() {
-    let scene = SKScene(fileNamed: "GameScene")
+//    let scene = SKScene(fileNamed: "GameScene")
+    let scene = GameScene.level(levelNum: currentLevel)
     scene?.scaleMode = scaleMode
     view?.presentScene(scene) // remove current scene and replaces it with the new scene
   }
@@ -99,6 +102,14 @@ class GameScene: SKScene {
     
     run(SKAction.afterDelay(3, runBlock: newGame))
     catNode.curlAt(scenePoint: bedNode.position)
+  }
+  
+  // MARK: - helper
+  class func level(levelNum: Int) -> GameScene? {
+    let scene = GameScene(fileNamed: "Level\(levelNum)")
+    scene?.currentLevel = levelNum
+    scene?.scaleMode = .aspectFill
+    return scene
   }
 }
 
