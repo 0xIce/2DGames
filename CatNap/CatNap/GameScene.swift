@@ -32,6 +32,7 @@ class GameScene: SKScene {
   
   var playable = true
   
+  // MARK: - loop
   override func didMove(to view: SKView) {
     let maxAspectRatio: CGFloat = 16.0 / 9.0
     let maxAspectRatioHeight = size.width / maxAspectRatio
@@ -56,6 +57,16 @@ class GameScene: SKScene {
 //    SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
   }
   
+  override func didSimulatePhysics() {
+    guard playable else {
+      return
+    }
+    if abs(catNode.parent!.zRotation) > CGFloat(25).degreesToRadians() {
+      lose()
+    }
+  }
+  
+  // MARK: - action
   func inGameMessage(text: String) {
     let messageNode = MessageNode(message: text)
     messageNode.position = CGPoint(x: frame.midX, y: frame.midY)
