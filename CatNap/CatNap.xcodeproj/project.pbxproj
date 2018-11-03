@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB021C0E2189CDC600DA185B /* Cat.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB021C0D2189CDC600DA185B /* Cat.sks */; };
+		FB30A038218DC96C00D5F476 /* HookBaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB30A037218DC96B00D5F476 /* HookBaseNode.swift */; };
 		FB39CB93218DA81E00DD9F7B /* SpringNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39CB92218DA81E00DD9F7B /* SpringNode.swift */; };
 		FB4D75B1218C204700CE0FFD /* BedNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75B0218C204700CE0FFD /* BedNode.swift */; };
 		FB4D75B3218C29E000CE0FFD /* CatNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75B2218C29E000CE0FFD /* CatNode.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		FB021C0D2189CDC600DA185B /* Cat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cat.sks; sourceTree = "<group>"; };
+		FB30A037218DC96B00D5F476 /* HookBaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookBaseNode.swift; sourceTree = "<group>"; };
 		FB39CB92218DA81E00DD9F7B /* SpringNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringNode.swift; sourceTree = "<group>"; };
 		FB4D75B0218C204700CE0FFD /* BedNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedNode.swift; sourceTree = "<group>"; };
 		FB4D75B2218C29E000CE0FFD /* CatNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatNode.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */,
 				FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */,
 				FB39CB92218DA81E00DD9F7B /* SpringNode.swift */,
+				FB30A037218DC96B00D5F476 /* HookBaseNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				FB4D75B1218C204700CE0FFD /* BedNode.swift in Sources */,
 				FB4D75C3218C904600CE0FFD /* Int+Extensions.swift in Sources */,
 				FBD22FD12189A53200BCBF9D /* GameViewController.swift in Sources */,
+				FB30A038218DC96C00D5F476 /* HookBaseNode.swift in Sources */,
 				FB39CB93218DA81E00DD9F7B /* SpringNode.swift in Sources */,
 				FB4D75CC218C904600CE0FFD /* CGFloat+Extensions.swift in Sources */,
 				FB4D75CB218C904600CE0FFD /* Vector3.swift in Sources */,

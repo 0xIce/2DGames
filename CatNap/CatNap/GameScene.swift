@@ -25,6 +25,7 @@ struct PhysicsCategory {
   static let Edge:    UInt32 = 0b1000
   static let Label:   UInt32 = 0b10000
   static let Spring:  UInt32 = 0b100000
+  static let Hook:    UInt32 = 0b1000000
 }
 
 class GameScene: SKScene {
