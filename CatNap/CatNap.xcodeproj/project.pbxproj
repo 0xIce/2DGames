@@ -23,6 +23,7 @@
 		FB4D75CB218C904600CE0FFD /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75BF218C904600CE0FFD /* Vector3.swift */; };
 		FB4D75CC218C904600CE0FFD /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75C0218C904600CE0FFD /* CGFloat+Extensions.swift */; };
 		FB4D75CE218C9BB800CE0FFD /* BlockNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */; };
+		FB4D75D0218CAF9C00CE0FFD /* MessageNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */; };
 		FBD22FC92189A53200BCBF9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD22FC82189A53200BCBF9D /* AppDelegate.swift */; };
 		FBD22FCB2189A53200BCBF9D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FCA2189A53200BCBF9D /* GameScene.sks */; };
 		FBD22FCF2189A53200BCBF9D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD22FCE2189A53200BCBF9D /* GameScene.swift */; };
@@ -56,6 +57,7 @@
 		FB4D75BF218C904600CE0FFD /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		FB4D75C0218C904600CE0FFD /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockNode.swift; sourceTree = "<group>"; };
+		FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNode.swift; sourceTree = "<group>"; };
 		FBD22FC52189A53100BCBF9D /* CatNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD22FC82189A53200BCBF9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBD22FCA2189A53200BCBF9D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				FB4D75B0218C204700CE0FFD /* BedNode.swift */,
 				FB4D75B2218C29E000CE0FFD /* CatNode.swift */,
 				FB4D75CD218C9BB800CE0FFD /* BlockNode.swift */,
+				FB4D75CF218CAF9C00CE0FFD /* MessageNode.swift */,
 				FBD22FE02189A5CA00BCBF9D /* Resources */,
 			);
 			path = CatNap;
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBD22FCF2189A53200BCBF9D /* GameScene.swift in Sources */,
+				FB4D75D0218CAF9C00CE0FFD /* MessageNode.swift in Sources */,
 				FB4D75C5218C904600CE0FFD /* SKAction+Extensions.swift in Sources */,
 				FB4D75C4218C904600CE0FFD /* SKTTimingFunctions.swift in Sources */,
 				FB4D75C2218C904600CE0FFD /* CGVector+Extensions.swift in Sources */,
