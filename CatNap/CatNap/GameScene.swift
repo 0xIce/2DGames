@@ -93,10 +93,16 @@ class GameScene: SKScene {
 
 extension GameScene: SKPhysicsContactDelegate {
   func didBegin(_ contact: SKPhysicsContact) {
+    let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+    
+    if collision == PhysicsCategory.Label | PhysicsCategory.Edge {
+      let labelNode = contact.bodyA.categoryBitMask == PhysicsCategory.Label ? contact.bodyA.node : contact.bodyB.node
+      (labelNode as! MessageNode).didBounce()
+    }
+    
     guard playable else {
       return
     }
-    let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
     switch collision {
     case PhysicsCategory.Cat | PhysicsCategory.Bed:
       print("Success")
