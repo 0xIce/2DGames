@@ -10,6 +10,10 @@
 		FB021C0E2189CDC600DA185B /* Cat.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB021C0D2189CDC600DA185B /* Cat.sks */; };
 		FB30A038218DC96C00D5F476 /* HookBaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB30A037218DC96B00D5F476 /* HookBaseNode.swift */; };
 		FB30A03A218DEB7300D5F476 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB30A039218DEB7300D5F476 /* Level3.sks */; };
+		FB3324BE218EBEA200E7162F /* discolights-loop.mov in Resources */ = {isa = PBXBuildFile; fileRef = FB3324BC218EBEA200E7162F /* discolights-loop.mov */; };
+		FB3324BF218EBEA200E7162F /* disco-sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB3324BD218EBEA200E7162F /* disco-sound.m4a */; };
+		FB3324C2218EBED800E7162F /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C0218EBED800E7162F /* Level5.sks */; };
+		FB3324C3218EBED800E7162F /* Level6.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C1218EBED800E7162F /* Level6.sks */; };
 		FB39CB93218DA81E00DD9F7B /* SpringNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39CB92218DA81E00DD9F7B /* SpringNode.swift */; };
 		FB4A0768218DFEA400797657 /* StoneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A0767218DFEA400797657 /* StoneNode.swift */; };
 		FB4A076A218E935C00797657 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB4A0769218E935C00797657 /* Level4.sks */; };
@@ -50,6 +54,10 @@
 		FB021C0D2189CDC600DA185B /* Cat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cat.sks; sourceTree = "<group>"; };
 		FB30A037218DC96B00D5F476 /* HookBaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookBaseNode.swift; sourceTree = "<group>"; };
 		FB30A039218DEB7300D5F476 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
+		FB3324BC218EBEA200E7162F /* discolights-loop.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "discolights-loop.mov"; sourceTree = "<group>"; };
+		FB3324BD218EBEA200E7162F /* disco-sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "disco-sound.m4a"; sourceTree = "<group>"; };
+		FB3324C0218EBED800E7162F /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
+		FB3324C1218EBED800E7162F /* Level6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6.sks; sourceTree = "<group>"; };
 		FB39CB92218DA81E00DD9F7B /* SpringNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringNode.swift; sourceTree = "<group>"; };
 		FB4A0767218DFEA400797657 /* StoneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneNode.swift; sourceTree = "<group>"; };
 		FB4A0769218E935C00797657 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
@@ -106,11 +114,22 @@
 				FB4D75D2218DA47200CE0FFD /* Level2.sks */,
 				FB30A039218DEB7300D5F476 /* Level3.sks */,
 				FB4A0769218E935C00797657 /* Level4.sks */,
+				FB3324C0218EBED800E7162F /* Level5.sks */,
+				FB3324C1218EBED800E7162F /* Level6.sks */,
 				FB021C0D2189CDC600DA185B /* Cat.sks */,
 				FBFACAC9218AE322009686A9 /* CatCurl.sks */,
 				FBFACACB218AE48C009686A9 /* CatWakeUp.sks */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FB3324BB218EBEA200E7162F /* media */ = {
+			isa = PBXGroup;
+			children = (
+				FB3324BC218EBEA200E7162F /* discolights-loop.mov */,
+				FB3324BD218EBEA200E7162F /* disco-sound.m4a */,
+			);
+			path = media;
 			sourceTree = "<group>";
 		};
 		FB4D75B4218C904600CE0FFD /* SKTUtils */ = {
@@ -179,6 +198,7 @@
 		FBD22FE02189A5CA00BCBF9D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FB3324BB218EBEA200E7162F /* media */,
 				FBD22FE12189A99D00BCBF9D /* Sounds */,
 				FBD22FD22189A53200BCBF9D /* Main.storyboard */,
 				FBD22FD52189A53300BCBF9D /* Assets.xcassets */,
@@ -262,11 +282,15 @@
 				FB021C0E2189CDC600DA185B /* Cat.sks in Resources */,
 				FBD22FCB2189A53200BCBF9D /* Level1.sks in Resources */,
 				FBD22FEA2189A99D00BCBF9D /* lose.mp3 in Resources */,
+				FB3324C2218EBED800E7162F /* Level5.sks in Resources */,
 				FB30A03A218DEB7300D5F476 /* Level3.sks in Resources */,
+				FB3324C3218EBED800E7162F /* Level6.sks in Resources */,
 				FB4D75D3218DA47200CE0FFD /* Level2.sks in Resources */,
 				FBFACACC218AE48C009686A9 /* CatWakeUp.sks in Resources */,
 				FBFACACA218AE322009686A9 /* CatCurl.sks in Resources */,
+				FB3324BE218EBEA200E7162F /* discolights-loop.mov in Resources */,
 				FBD22FD62189A53300BCBF9D /* Assets.xcassets in Resources */,
+				FB3324BF218EBEA200E7162F /* disco-sound.m4a in Resources */,
 				FBD22FE92189A99D00BCBF9D /* win.mp3 in Resources */,
 				FBD22FD92189A53300BCBF9D /* LaunchScreen.storyboard in Resources */,
 				FBD22FE72189A99D00BCBF9D /* mrreow.mp3 in Resources */,

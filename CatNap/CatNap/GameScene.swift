@@ -107,7 +107,7 @@ class GameScene: SKScene {
   }
   
   func win() {
-    if currentLevel < 4 {
+    if currentLevel < 6 {
       currentLevel += 1
     }
     playable = false
