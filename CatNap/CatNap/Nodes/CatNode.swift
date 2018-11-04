@@ -10,6 +10,8 @@ import SpriteKit
 
 class CatNode: SKSpriteNode {
   static let kCatTappedNotification = "kCatTappedNotification"
+  
+  private var isDoingTheDance = false
 
   func wakeUp() {
     for child in children {
@@ -66,5 +68,18 @@ extension CatNode: EventListenerNode {
 extension CatNode: InteractiveNode {
   func interact() {
     NotificationCenter.default.post(name: NSNotification.Name(CatNode.kCatTappedNotification), object: nil)
+    
+    if DiscoBallNode.isDiscoTime,
+      !isDoingTheDance {
+      isDoingTheDance = true
+      
+      let move = SKAction.sequence([SKAction.moveBy(x: 80, y: 0, duration: 0.5),
+                                    SKAction.wait(forDuration: 0.5),
+                                    SKAction.moveBy(x: -30, y: 0, duration: 0.5)])
+      let dance = SKAction.repeat(move, count: 3)
+      parent!.run(dance) {
+        self.isDoingTheDance = false
+      }
+    }
   }
 }

@@ -10,10 +10,13 @@ import AVFoundation
 import SpriteKit
 
 class DiscoBallNode: SKSpriteNode {
+  static private(set) var isDiscoTime: Bool = false
+  
   private var player: AVPlayer!
   private var video: SKVideoNode!
   private var isDiscoTime: Bool = false {
     didSet {
+      DiscoBallNode.isDiscoTime = isDiscoTime
       video.isHidden = !isDiscoTime
       if isDiscoTime {
         video.play()
