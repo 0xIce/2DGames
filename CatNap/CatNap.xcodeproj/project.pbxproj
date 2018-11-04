@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB021C0E2189CDC600DA185B /* Cat.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB021C0D2189CDC600DA185B /* Cat.sks */; };
 		FB30A038218DC96C00D5F476 /* HookBaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB30A037218DC96B00D5F476 /* HookBaseNode.swift */; };
 		FB30A03A218DEB7300D5F476 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB30A039218DEB7300D5F476 /* Level3.sks */; };
 		FB3324BE218EBEA200E7162F /* discolights-loop.mov in Resources */ = {isa = PBXBuildFile; fileRef = FB3324BC218EBEA200E7162F /* discolights-loop.mov */; };
 		FB3324BF218EBEA200E7162F /* disco-sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = FB3324BD218EBEA200E7162F /* disco-sound.m4a */; };
 		FB3324C2218EBED800E7162F /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C0218EBED800E7162F /* Level5.sks */; };
 		FB3324C3218EBED800E7162F /* Level6.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C1218EBED800E7162F /* Level6.sks */; };
+		FB3324C5218EBFB800E7162F /* Cat.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C4218EBFB700E7162F /* Cat.sks */; };
+		FB3324C8218EC02100E7162F /* CatWakeUp.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C6218EC02000E7162F /* CatWakeUp.sks */; };
+		FB3324C9218EC02100E7162F /* CatCurl.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C7218EC02000E7162F /* CatCurl.sks */; };
 		FB39CB93218DA81E00DD9F7B /* SpringNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39CB92218DA81E00DD9F7B /* SpringNode.swift */; };
 		FB4A0768218DFEA400797657 /* StoneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A0767218DFEA400797657 /* StoneNode.swift */; };
 		FB4A076A218E935C00797657 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB4A0769218E935C00797657 /* Level4.sks */; };
@@ -46,18 +48,18 @@
 		FBD22FE92189A99D00BCBF9D /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE42189A99D00BCBF9D /* win.mp3 */; };
 		FBD22FEA2189A99D00BCBF9D /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE52189A99D00BCBF9D /* lose.mp3 */; };
 		FBD22FEB2189A99D00BCBF9D /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FBD22FE62189A99D00BCBF9D /* backgroundMusic.mp3 */; };
-		FBFACACA218AE322009686A9 /* CatCurl.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBFACAC9218AE322009686A9 /* CatCurl.sks */; };
-		FBFACACC218AE48C009686A9 /* CatWakeUp.sks in Resources */ = {isa = PBXBuildFile; fileRef = FBFACACB218AE48C009686A9 /* CatWakeUp.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB021C0D2189CDC600DA185B /* Cat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cat.sks; sourceTree = "<group>"; };
 		FB30A037218DC96B00D5F476 /* HookBaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookBaseNode.swift; sourceTree = "<group>"; };
 		FB30A039218DEB7300D5F476 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 		FB3324BC218EBEA200E7162F /* discolights-loop.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "discolights-loop.mov"; sourceTree = "<group>"; };
 		FB3324BD218EBEA200E7162F /* disco-sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "disco-sound.m4a"; sourceTree = "<group>"; };
 		FB3324C0218EBED800E7162F /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
 		FB3324C1218EBED800E7162F /* Level6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6.sks; sourceTree = "<group>"; };
+		FB3324C4218EBFB700E7162F /* Cat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cat.sks; sourceTree = "<group>"; };
+		FB3324C6218EC02000E7162F /* CatWakeUp.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatWakeUp.sks; sourceTree = "<group>"; };
+		FB3324C7218EC02000E7162F /* CatCurl.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatCurl.sks; sourceTree = "<group>"; };
 		FB39CB92218DA81E00DD9F7B /* SpringNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringNode.swift; sourceTree = "<group>"; };
 		FB4A0767218DFEA400797657 /* StoneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneNode.swift; sourceTree = "<group>"; };
 		FB4A0769218E935C00797657 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
@@ -92,8 +94,6 @@
 		FBD22FE42189A99D00BCBF9D /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
 		FBD22FE52189A99D00BCBF9D /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lose.mp3; sourceTree = "<group>"; };
 		FBD22FE62189A99D00BCBF9D /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
-		FBFACAC9218AE322009686A9 /* CatCurl.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatCurl.sks; sourceTree = "<group>"; };
-		FBFACACB218AE48C009686A9 /* CatWakeUp.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatWakeUp.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +116,9 @@
 				FB4A0769218E935C00797657 /* Level4.sks */,
 				FB3324C0218EBED800E7162F /* Level5.sks */,
 				FB3324C1218EBED800E7162F /* Level6.sks */,
-				FB021C0D2189CDC600DA185B /* Cat.sks */,
-				FBFACAC9218AE322009686A9 /* CatCurl.sks */,
-				FBFACACB218AE48C009686A9 /* CatWakeUp.sks */,
+				FB3324C4218EBFB700E7162F /* Cat.sks */,
+				FB3324C7218EC02000E7162F /* CatCurl.sks */,
+				FB3324C6218EC02000E7162F /* CatWakeUp.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -278,16 +278,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3324C9218EC02100E7162F /* CatCurl.sks in Resources */,
 				FBD22FD42189A53200BCBF9D /* Main.storyboard in Resources */,
-				FB021C0E2189CDC600DA185B /* Cat.sks in Resources */,
 				FBD22FCB2189A53200BCBF9D /* Level1.sks in Resources */,
 				FBD22FEA2189A99D00BCBF9D /* lose.mp3 in Resources */,
 				FB3324C2218EBED800E7162F /* Level5.sks in Resources */,
 				FB30A03A218DEB7300D5F476 /* Level3.sks in Resources */,
 				FB3324C3218EBED800E7162F /* Level6.sks in Resources */,
+				FB3324C5218EBFB800E7162F /* Cat.sks in Resources */,
 				FB4D75D3218DA47200CE0FFD /* Level2.sks in Resources */,
-				FBFACACC218AE48C009686A9 /* CatWakeUp.sks in Resources */,
-				FBFACACA218AE322009686A9 /* CatCurl.sks in Resources */,
 				FB3324BE218EBEA200E7162F /* discolights-loop.mov in Resources */,
 				FBD22FD62189A53300BCBF9D /* Assets.xcassets in Resources */,
 				FB3324BF218EBEA200E7162F /* disco-sound.m4a in Resources */,
@@ -295,6 +294,7 @@
 				FBD22FD92189A53300BCBF9D /* LaunchScreen.storyboard in Resources */,
 				FBD22FE72189A99D00BCBF9D /* mrreow.mp3 in Resources */,
 				FBD22FE82189A99D00BCBF9D /* pop.mp3 in Resources */,
+				FB3324C8218EC02100E7162F /* CatWakeUp.sks in Resources */,
 				FBD22FEB2189A99D00BCBF9D /* backgroundMusic.mp3 in Resources */,
 				FB4A076A218E935C00797657 /* Level4.sks in Resources */,
 			);
