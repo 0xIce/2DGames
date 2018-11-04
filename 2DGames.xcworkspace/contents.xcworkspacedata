@@ -8,6 +8,9 @@
       location = "group:CatNap/CatNap.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:PestControl/PestControl.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ZombieConga/ZombieConga.xcodeproj">
    </FileRef>
    <FileRef
