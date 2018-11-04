@@ -93,6 +93,9 @@ class GameScene: SKScene {
   }
   
   func lose() {
+    if currentLevel > 1 {
+      currentLevel -= 1
+    }
     playable = false
     SKTAudio.sharedInstance().pauseBackgroundMusic()
     SKTAudio.sharedInstance().playSoundEffect("lose.mp3")
@@ -104,6 +107,9 @@ class GameScene: SKScene {
   }
   
   func win() {
+    if currentLevel < 3 {
+      currentLevel += 1
+    }
     playable = false
     SKTAudio.sharedInstance().pauseBackgroundMusic()
     SKTAudio.sharedInstance().playSoundEffect("win.mp3")
