@@ -16,6 +16,7 @@
 		FB3324C5218EBFB800E7162F /* Cat.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C4218EBFB700E7162F /* Cat.sks */; };
 		FB3324C8218EC02100E7162F /* CatWakeUp.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C6218EC02000E7162F /* CatWakeUp.sks */; };
 		FB3324C9218EC02100E7162F /* CatCurl.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324C7218EC02000E7162F /* CatCurl.sks */; };
+		FB3324CB218F4DEC00E7162F /* PictureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3324CA218F4DEC00E7162F /* PictureNode.swift */; };
 		FB39CB93218DA81E00DD9F7B /* SpringNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39CB92218DA81E00DD9F7B /* SpringNode.swift */; };
 		FB4A0768218DFEA400797657 /* StoneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A0767218DFEA400797657 /* StoneNode.swift */; };
 		FB4A076A218E935C00797657 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB4A0769218E935C00797657 /* Level4.sks */; };
@@ -60,6 +61,7 @@
 		FB3324C4218EBFB700E7162F /* Cat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cat.sks; sourceTree = "<group>"; };
 		FB3324C6218EC02000E7162F /* CatWakeUp.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatWakeUp.sks; sourceTree = "<group>"; };
 		FB3324C7218EC02000E7162F /* CatCurl.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatCurl.sks; sourceTree = "<group>"; };
+		FB3324CA218F4DEC00E7162F /* PictureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNode.swift; sourceTree = "<group>"; };
 		FB39CB92218DA81E00DD9F7B /* SpringNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringNode.swift; sourceTree = "<group>"; };
 		FB4A0767218DFEA400797657 /* StoneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneNode.swift; sourceTree = "<group>"; };
 		FB4A0769218E935C00797657 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				FB39CB92218DA81E00DD9F7B /* SpringNode.swift */,
 				FB30A037218DC96B00D5F476 /* HookBaseNode.swift */,
 				FB4A0767218DFEA400797657 /* StoneNode.swift */,
+				FB3324CA218F4DEC00E7162F /* PictureNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				FBD22FCF2189A53200BCBF9D /* GameScene.swift in Sources */,
 				FB4D75D0218CAF9C00CE0FFD /* MessageNode.swift in Sources */,
 				FB4D75C5218C904600CE0FFD /* SKAction+Extensions.swift in Sources */,
+				FB3324CB218F4DEC00E7162F /* PictureNode.swift in Sources */,
 				FB4D75C4218C904600CE0FFD /* SKTTimingFunctions.swift in Sources */,
 				FB4D75C2218C904600CE0FFD /* CGVector+Extensions.swift in Sources */,
 				FB4D75C8218C904600CE0FFD /* CGPoint+Extensions.swift in Sources */,
