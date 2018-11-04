@@ -60,7 +60,7 @@ class GameScene: SKScene {
 //    bedNode.setScale(1.5)
 //    catNode.setScale(1.5)
     
-//    SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
+    SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     
 //    let rotationConstraint = SKConstraint.zRotation(SKRange(lowerLimit: -π/4, upperLimit: π/4))
 //    catNode.parent?.constraints = [rotationConstraint]

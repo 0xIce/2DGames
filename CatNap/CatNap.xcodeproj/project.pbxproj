@@ -18,6 +18,7 @@
 		FB3324CB218F4DEC00E7162F /* PictureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3324CA218F4DEC00E7162F /* PictureNode.swift */; };
 		FB3324CD218F512A00E7162F /* CatCurl.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB3324CC218F512A00E7162F /* CatCurl.sks */; };
 		FB3324CF218F532D00E7162F /* DiscoBallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3324CE218F532D00E7162F /* DiscoBallNode.swift */; };
+		FB3324D1218F682400E7162F /* HintNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3324D0218F682400E7162F /* HintNode.swift */; };
 		FB39CB93218DA81E00DD9F7B /* SpringNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB39CB92218DA81E00DD9F7B /* SpringNode.swift */; };
 		FB4A0768218DFEA400797657 /* StoneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4A0767218DFEA400797657 /* StoneNode.swift */; };
 		FB4A076A218E935C00797657 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB4A0769218E935C00797657 /* Level4.sks */; };
@@ -64,6 +65,7 @@
 		FB3324CA218F4DEC00E7162F /* PictureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNode.swift; sourceTree = "<group>"; };
 		FB3324CC218F512A00E7162F /* CatCurl.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatCurl.sks; sourceTree = "<group>"; };
 		FB3324CE218F532D00E7162F /* DiscoBallNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoBallNode.swift; sourceTree = "<group>"; };
+		FB3324D0218F682400E7162F /* HintNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintNode.swift; sourceTree = "<group>"; };
 		FB39CB92218DA81E00DD9F7B /* SpringNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringNode.swift; sourceTree = "<group>"; };
 		FB4A0767218DFEA400797657 /* StoneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneNode.swift; sourceTree = "<group>"; };
 		FB4A0769218E935C00797657 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				FB4A0767218DFEA400797657 /* StoneNode.swift */,
 				FB3324CA218F4DEC00E7162F /* PictureNode.swift */,
 				FB3324CE218F532D00E7162F /* DiscoBallNode.swift */,
+				FB3324D0218F682400E7162F /* HintNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				FB4D75C7218C904600CE0FFD /* SKNode+Extensions.swift in Sources */,
 				FB4D75C9218C904600CE0FFD /* SKTEffects.swift in Sources */,
 				FB4D75CE218C9BB800CE0FFD /* BlockNode.swift in Sources */,
+				FB3324D1218F682400E7162F /* HintNode.swift in Sources */,
 				FB4D75C1218C904600CE0FFD /* SKColor+Extensions.swift in Sources */,
 				FB4D75B3218C29E000CE0FFD /* CatNode.swift in Sources */,
 				FB4D75B1218C204700CE0FFD /* BedNode.swift in Sources */,
