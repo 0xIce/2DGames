@@ -32,12 +32,36 @@ import SpriteKit
 
 class GameScene: SKScene {
   var player = Player()
+  var background: SKTileMapNode!
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    background = childNode(withName: "background") as? SKTileMapNode
+  }
+  
   override func didMove(to view: SKView) {
     addChild(player)
+    setupCamera()
+    setupPhysicsWorld()
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard let touch = touches.first else { return }
     player.move(target: touch.location(in: self))
+  }
+  
+  private func setupCamera() {
+    guard let camera = camera else {
+      return
+    }
+    
+    let zeroDistance = SKRange(constantValue: 0)
+    let playerConstraint = SKConstraint.distance(zeroDistance, to: player)
+    
+    camera.constraints = [playerConstraint]
+  }
+  
+  private func setupPhysicsWorld() {
+    background.physicsBody = SKPhysicsBody(edgeLoopFrom: background.frame)
   }
 }

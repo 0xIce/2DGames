@@ -13,7 +13,6 @@ enum PlayerSettings {
 }
 
 class Player: SKSpriteNode {
-  var background: SKTileMapNode!
   // MARK: - loop
   init() {
     let texture = SKTexture(imageNamed: "player_ft1")
@@ -28,8 +27,7 @@ class Player: SKSpriteNode {
     physicsBody?.allowsRotation = false
   }
   required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    background = childNode(withName: "background") as? SKTileMapNode
+    fatalError("Use init()")
   }
   
   // MARK: - action
