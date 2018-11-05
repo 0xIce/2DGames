@@ -44,6 +44,10 @@ class GameScene: SKScene {
     addChild(player)
     setupCamera()
     setupPhysicsWorld()
+    
+    let bug = Bug()
+    bug.position = CGPoint(x: 60, y: 0)
+    addChild(bug)
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
