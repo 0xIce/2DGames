@@ -13,6 +13,7 @@ enum PlayerSettings {
 }
 
 class Player: SKSpriteNode {
+  var animations: [SKAction] = []
   // MARK: - loop
   init() {
     let texture = SKTexture(imageNamed: "player_ft1")
@@ -25,6 +26,8 @@ class Player: SKSpriteNode {
     physicsBody?.linearDamping = 0.5
     physicsBody?.friction = 0 // 光滑程度
     physicsBody?.allowsRotation = false
+    
+    createAnimations(charactar: "player")
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("Use init()")
@@ -37,5 +40,27 @@ class Player: SKSpriteNode {
     }
     let newVelocity = (target - position).normalized() * PlayerSettings.playerSpeed
     physicsBody.velocity = CGVector(point: newVelocity)
+    print("* \(animationDirection(for: physicsBody.velocity))")
+    
+    checkDirection()
+  }
+  
+  func checkDirection() {
+    guard let physicsBody = physicsBody else { return }
+    
+    let direction = animationDirection(for: physicsBody.velocity)
+    
+    switch direction {
+    case .left:
+      xScale = abs(xScale)
+    case .right:
+      xScale = -abs(xScale)
+    default:
+      break
+    }
+    
+    run(animations[direction.rawValue], withKey: "animation")
   }
 }
+
+extension Player: Animatable {}
