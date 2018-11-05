@@ -24,16 +24,16 @@ extension Animatable {
   }
   
   func createAnimations(charactar: String) {
-    let actionForward = SKAction.animate(with: [SKTexture(imageNamed: "\(charactar)_ft1"),
-                                                SKTexture(imageNamed: "\(charactar)_ft2")], timePerFrame: 0.2)
+    let actionForward = SKAction.animate(with: [SKTexture(pixelImageNamed: "\(charactar)_ft1"),
+                                                SKTexture(pixelImageNamed: "\(charactar)_ft2")], timePerFrame: 0.2)
     animations.append(SKAction.repeatForever(actionForward))
     
-    let actionBackward = SKAction.animate(with: [SKTexture(imageNamed: "\(charactar)_bk1"),
-                                                 SKTexture(imageNamed: "\(charactar)_bk2")], timePerFrame: 0.2)
+    let actionBackward = SKAction.animate(with: [SKTexture(pixelImageNamed: "\(charactar)_bk1"),
+                                                 SKTexture(pixelImageNamed: "\(charactar)_bk2")], timePerFrame: 0.2)
     animations.append(SKAction.repeatForever(actionBackward))
     
-    let actionLeft = SKAction.animate(with: [SKTexture(imageNamed: "\(charactar)_lt1"),
-                                             SKTexture(imageNamed: "\(charactar)_lt2")], timePerFrame: 0.2)
+    let actionLeft = SKAction.animate(with: [SKTexture(pixelImageNamed: "\(charactar)_lt1"),
+                                             SKTexture(pixelImageNamed: "\(charactar)_lt2")], timePerFrame: 0.2)
     animations.append(SKAction.repeatForever(actionLeft))
     
     animations.append(SKAction.repeatForever(actionLeft))
