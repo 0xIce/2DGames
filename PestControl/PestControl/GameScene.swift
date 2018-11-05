@@ -28,6 +28,7 @@
  * THE SOFTWARE.
  */
 
+import Foundation
 import SpriteKit
 
 class GameScene: SKScene {
@@ -51,14 +52,29 @@ class GameScene: SKScene {
   }
   
   private func setupCamera() {
-    guard let camera = camera else {
+    guard let camera = camera,
+      let view = view else {
       return
     }
     
     let zeroDistance = SKRange(constantValue: 0)
     let playerConstraint = SKConstraint.distance(zeroDistance, to: player)
+    // 1
+    let xInset = min(view.bounds.width / 2 * camera.xScale, background.frame.width / 2)
+    let yInset = min(view.bounds.height / 2 * camera.yScale, background.frame.height / 2)
     
-    camera.constraints = [playerConstraint]
+    // 2
+    let constraintRect = background.frame.insetBy(dx: xInset, dy: yInset)
+    
+    // 3
+    let xRange = SKRange(lowerLimit: constraintRect.minX, upperLimit: constraintRect.maxX)
+    let yRange = SKRange(lowerLimit: constraintRect.minY, upperLimit: constraintRect.maxY)
+    
+    let edgeConstraint = SKConstraint.positionX(xRange, y: yRange)
+    edgeConstraint.referenceNode = background
+    
+    // 4
+    camera.constraints = [playerConstraint, edgeConstraint]
   }
   
   private func setupPhysicsWorld() {
