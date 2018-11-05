@@ -27,6 +27,7 @@
 		82CCE3BD1F0B0A39009B67F9 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CCE3B11F0B0A2E009B67F9 /* SKTTimingFunctions.swift */; };
 		82CCE3BE1F0B0A39009B67F9 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CCE3B21F0B0A2E009B67F9 /* Vector3.swift */; };
 		FB7ECD98219003510033A625 /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB7ECD97219003510033A625 /* TileSets.sks */; };
+		FBA99EB021900D2F00433C77 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EAF21900D2F00433C77 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		82CCE3B11F0B0A2E009B67F9 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		82CCE3B21F0B0A2E009B67F9 /* Vector3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		FB7ECD97219003510033A625 /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
+		FBA99EAF21900D2F00433C77 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				FB7ECD99219003F70033A625 /* Scenes */,
 				82CCE3A61F0B0A2E009B67F9 /* SKTUtils */,
+				FBA99EAE21900D0900433C77 /* Characters */,
 				824441721D3C5E8F005ECB76 /* AppDelegate.swift */,
 				8244417A1D3C5E8F005ECB76 /* GameViewController.swift */,
 				824441781D3C5E8F005ECB76 /* GameScene.swift */,
@@ -133,6 +136,14 @@
 				FB7ECD97219003510033A625 /* TileSets.sks */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		FBA99EAE21900D0900433C77 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				FBA99EAF21900D2F00433C77 /* Player.swift */,
+			);
+			path = Characters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 				82CCE3B41F0B0A39009B67F9 /* CGPoint+Extensions.swift in Sources */,
 				82CCE3BD1F0B0A39009B67F9 /* SKTTimingFunctions.swift in Sources */,
 				82CCE3BC1F0B0A39009B67F9 /* SKTEffects.swift in Sources */,
+				FBA99EB021900D2F00433C77 /* Player.swift in Sources */,
 				82CCE3B81F0B0A39009B67F9 /* SKAction+SpecialEffects.swift in Sources */,
 				82CCE3B51F0B0A39009B67F9 /* CGVector+Extensions.swift in Sources */,
 				82CCE3B71F0B0A39009B67F9 /* SKAction+Extensions.swift in Sources */,

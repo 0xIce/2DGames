@@ -31,4 +31,13 @@
 import SpriteKit
 
 class GameScene: SKScene {
+  var player = Player()
+  override func didMove(to view: SKView) {
+    addChild(player)
+  }
+  
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    guard let touch = touches.first else { return }
+    player.move(target: touch.location(in: self))
+  }
 }
