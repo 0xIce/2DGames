@@ -86,12 +86,11 @@
 		824441711D3C5E8F005ECB76 /* PestControl */ = {
 			isa = PBXGroup;
 			children = (
-				824441721D3C5E8F005ECB76 /* AppDelegate.swift */,
+				FB7ECD99219003F70033A625 /* Scenes */,
 				82CCE3A61F0B0A2E009B67F9 /* SKTUtils */,
+				824441721D3C5E8F005ECB76 /* AppDelegate.swift */,
 				8244417A1D3C5E8F005ECB76 /* GameViewController.swift */,
-				824441741D3C5E8F005ECB76 /* GameScene.sks */,
 				824441781D3C5E8F005ECB76 /* GameScene.swift */,
-				FB7ECD97219003510033A625 /* TileSets.sks */,
 				8244417F1D3C5E8F005ECB76 /* Assets.xcassets */,
 				8244418A1D3C5FE1005ECB76 /* Storyboards */,
 				824441841D3C5E8F005ECB76 /* Info.plist */,
@@ -125,6 +124,15 @@
 				82CCE3B21F0B0A2E009B67F9 /* Vector3.swift */,
 			);
 			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+		FB7ECD99219003F70033A625 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				824441741D3C5E8F005ECB76 /* GameScene.sks */,
+				FB7ECD97219003510033A625 /* TileSets.sks */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
