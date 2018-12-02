@@ -37,6 +37,7 @@ class GameScene: SKScene {
   var bugsNode = SKNode()
   var obstaclesTileMap: SKTileMapNode?
   var firbugCount = 0
+  var bugsprayTileMap: SKTileMapNode?
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -54,6 +55,9 @@ class GameScene: SKScene {
 //    addChild(bug)
     createBugs()
     setupObstaclePhysics()
+    if firbugCount > 0 {
+      createBugspray(quantity: firbugCount + 10)
+    }
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -150,6 +154,35 @@ extension GameScene {
     obstaclesTileMap.physicsBody = SKPhysicsBody(bodies: physicsBodies)
     obstaclesTileMap.physicsBody?.isDynamic = false
     obstaclesTileMap.physicsBody?.friction = 0
+  }
+  
+  func createBugspray(quantity: Int) {
+    // 1
+    let tile = SKTileDefinition(texture: SKTexture(pixelImageNamed: "bugspray"))
+    // 2
+    let tilerule = SKTileGroupRule(adjacency: SKTileAdjacencyMask.adjacencyAll,
+                                   tileDefinitions: [tile])
+    // 3
+    let tilegroup = SKTileGroup(rules: [tilerule])
+    // 4
+    let tileset = SKTileSet(tileGroups: [tilegroup])
+    // 5
+    let columns = background.numberOfColumns
+    let rows = background.numberOfRows
+    bugsprayTileMap = SKTileMapNode(tileSet: tileset,
+                                    columns: columns,
+                                    rows: rows,
+                                    tileSize: tile.size)
+    // 6
+    for _ in 0...quantity {
+      let column = Int.random(min: 0, max: columns - 1)
+      let row = Int.random(min: 0, max: rows - 1)
+      bugsprayTileMap?.setTileGroup(tilegroup, forColumn: column, row: row)
+    }
+    
+    // 7
+    bugsprayTileMap?.name = "Bugspray"
+    addChild(bugsprayTileMap!)
   }
 }
 
