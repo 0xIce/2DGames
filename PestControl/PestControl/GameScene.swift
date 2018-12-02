@@ -35,10 +35,12 @@ class GameScene: SKScene {
   var player = Player()
   var background: SKTileMapNode!
   var bugsNode = SKNode()
+  var obstaclesTileMap: SKTileMapNode?
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     background = childNode(withName: "background") as? SKTileMapNode
+    obstaclesTileMap = childNode(withName: "obstacles") as? SKTileMapNode
   }
   
   override func didMove(to view: SKView) {
@@ -50,6 +52,7 @@ class GameScene: SKScene {
 //    bug.position = CGPoint(x: 60, y: 0)
 //    addChild(bug)
     createBugs()
+    setupObstaclePhysics()
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -119,6 +122,26 @@ extension GameScene {
     bug.removeFromParent()
     background.addChild(bug)
     bug.die()
+  }
+  
+  func setupObstaclePhysics() {
+    guard let obstaclesTileMap = obstaclesTileMap else { return }
+    // 1
+    var physicsBodies = [SKPhysicsBody]()
+    // 2
+    for row in 0..<obstaclesTileMap.numberOfRows {
+      for column in 0..<obstaclesTileMap.numberOfColumns {
+        guard let tile = tile(in: obstaclesTileMap, at: (column, row)) else { continue }
+        // 3
+        let center = obstaclesTileMap.centerOfTile(atColumn: column, row: row)
+        let body = SKPhysicsBody(rectangleOf: tile.size, center: center)
+        physicsBodies.append(body)
+      }
+    }
+    // 4
+    obstaclesTileMap.physicsBody = SKPhysicsBody(bodies: physicsBodies)
+    obstaclesTileMap.physicsBody?.isDynamic = false
+    obstaclesTileMap.physicsBody?.friction = 0
   }
 }
 
