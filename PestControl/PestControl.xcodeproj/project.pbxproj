@@ -32,6 +32,7 @@
 		FBA99EB2219034F000433C77 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EB1219034F000433C77 /* Types.swift */; };
 		FBA99EB42190351200433C77 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EB32190351200433C77 /* Animatable.swift */; };
 		FBA99EB6219064D400433C77 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EB5219064D400433C77 /* Extensions.swift */; };
+		FBC5FB7E21B3C75B00FE34A6 /* Firebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC5FB7D21B3C75B00FE34A6 /* Firebug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		FBA99EB1219034F000433C77 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		FBA99EB32190351200433C77 /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
 		FBA99EB5219064D400433C77 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FBC5FB7D21B3C75B00FE34A6 /* Firebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				FBA99EAF21900D2F00433C77 /* Player.swift */,
 				FB12F6ED21907918005B4F4A /* Bug.swift */,
 				FBA99EB32190351200433C77 /* Animatable.swift */,
+				FBC5FB7D21B3C75B00FE34A6 /* Firebug.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				FBA99EB42190351200433C77 /* Animatable.swift in Sources */,
 				82CCE3BB1F0B0A39009B67F9 /* SKTAudio.swift in Sources */,
 				82CCE3B31F0B0A39009B67F9 /* CGFloat+Extensions.swift in Sources */,
+				FBC5FB7E21B3C75B00FE34A6 /* Firebug.swift in Sources */,
 				82CCE3BE1F0B0A39009B67F9 /* Vector3.swift in Sources */,
 				824441731D3C5E8F005ECB76 /* AppDelegate.swift in Sources */,
 			);

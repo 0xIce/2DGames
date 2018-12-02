@@ -36,6 +36,7 @@ class GameScene: SKScene {
   var background: SKTileMapNode!
   var bugsNode = SKNode()
   var obstaclesTileMap: SKTileMapNode?
+  var firbugCount = 0
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -106,7 +107,14 @@ extension GameScene {
     for row in 0..<bugsMap.numberOfRows {
       for column in 0..<bugsMap.numberOfColumns {
         guard let tile = tile(in: bugsMap, at: (column, row)) else { continue }
-        let bug = Bug()
+        //        let bug = Bug()
+        let bug: Bug
+        if tile.userData?.object(forKey: "firebug") != nil {
+          bug = Firebug()
+          firbugCount += 1
+        } else {
+          bug = Bug()
+        }
         bug.position = bugsMap.centerOfTile(atColumn: column, row: row)
         bugsNode.addChild(bug)
         bug.move()
