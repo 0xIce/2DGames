@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias TileCoordinates = (column: Int, row: Int)
+
 enum Direction: Int {
   case forward = 0, backward, left, right
 }
