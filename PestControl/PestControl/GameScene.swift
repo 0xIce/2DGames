@@ -60,6 +60,13 @@ class GameScene: SKScene {
     }
   }
   
+  override func update(_ currentTime: TimeInterval) {
+    super.update(currentTime)
+    if !player.hasBugspray {
+      updateBugspray()
+    }
+  }
+  
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard let touch = touches.first else { return }
     player.move(target: touch.location(in: self))
@@ -102,6 +109,12 @@ class GameScene: SKScene {
 extension GameScene {
   func tile(in tileMap: SKTileMapNode, at coordinates: TileCoordinates) -> SKTileDefinition? {
     return tileMap.tileDefinition(atColumn: coordinates.column, row: coordinates.row)
+  }
+  
+  func tileCoordicates(in tileMap: SKTileMapNode, at position: CGPoint) -> TileCoordinates {
+    let column = tileMap.tileColumnIndex(fromPosition: position)
+    let row = tileMap.tileRowIndex(fromPosition: position)
+    return (column, row)
   }
   
   func createBugs() {
@@ -184,6 +197,15 @@ extension GameScene {
     bugsprayTileMap?.name = "Bugspray"
     addChild(bugsprayTileMap!)
   }
+  
+  func updateBugspray() {
+    guard let bugsprayTileMap = bugsprayTileMap else { return }
+    let (column, row) = tileCoordicates(in: bugsprayTileMap, at: player.position)
+    if tile(in: bugsprayTileMap, at: (column, row)) != nil {
+      bugsprayTileMap.setTileGroup(nil, forColumn: column, row: row)
+      player.hasBugspray = true
+    }
+  }
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -193,6 +215,11 @@ extension GameScene: SKPhysicsContactDelegate {
     case PhysicsCategory.Bug:
       if let bug = other.node as? Bug {
         remove(bug: bug)
+      }
+    case PhysicsCategory.Firebug where player.hasBugspray:
+      if let firebug = other.node as? Firebug {
+        remove(bug: firebug)
+        player.hasBugspray = false
       }
     default:
       break
