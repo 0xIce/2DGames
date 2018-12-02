@@ -29,6 +29,9 @@ class Player: SKSpriteNode {
     physicsBody?.allowsRotation = false
     
     createAnimations(charactar: "player")
+    
+    physicsBody?.categoryBitMask = PhysicsCategory.Player
+    physicsBody?.contactTestBitMask = PhysicsCategory.All
   }
   required init?(coder aDecoder: NSCoder) {
     fatalError("Use init()")

@@ -85,6 +85,8 @@ class GameScene: SKScene {
   
   private func setupPhysicsWorld() {
     background.physicsBody = SKPhysicsBody(edgeLoopFrom: background.frame)
+    background.physicsBody?.categoryBitMask = PhysicsCategory.Edge
+    physicsWorld.contactDelegate = self
   }
 }
 
@@ -111,5 +113,31 @@ extension GameScene {
     bugsNode.name = "Bugs"
     addChild(bugsNode)
     bugsMap.removeFromParent()
+  }
+  
+  func remove(bug: Bug) {
+    bug.removeFromParent()
+    background.addChild(bug)
+    bug.die()
+  }
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+  func didBegin(_ contact: SKPhysicsContact) {
+    let other = contact.bodyA.categoryBitMask == PhysicsCategory.Player ? contact.bodyB : contact.bodyA
+    switch other.categoryBitMask {
+    case PhysicsCategory.Bug:
+      if let bug = other.node as? Bug {
+        remove(bug: bug)
+      }
+    default:
+      break
+    }
+    
+    if let physicsBody = player.physicsBody {
+      if physicsBody.velocity.length() > 0 {
+        player.checkDirection()
+      }
+    }
   }
 }
