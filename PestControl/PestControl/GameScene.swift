@@ -38,6 +38,7 @@ class GameScene: SKScene {
   var obstaclesTileMap: SKTileMapNode?
   var firbugCount = 0
   var bugsprayTileMap: SKTileMapNode?
+  var hud = HUD()
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -58,6 +59,7 @@ class GameScene: SKScene {
     if firbugCount > 0 {
       createBugspray(quantity: firbugCount + 10)
     }
+    setHud()
   }
   
   override func update(_ currentTime: TimeInterval) {
@@ -246,6 +248,11 @@ extension GameScene {
       obstaclesTileMap.setTileGroup(nextTileGroup, forColumn: column, row: row)
     }
     
+  }
+  
+  private func setHud() {
+    camera?.addChild(hud)
+    hud.add(message: "Howdy", position: .zero)
   }
 }
 

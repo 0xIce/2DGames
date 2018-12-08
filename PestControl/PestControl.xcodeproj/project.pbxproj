@@ -28,6 +28,7 @@
 		FB12F6EE21907918005B4F4A /* Bug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB12F6ED21907918005B4F4A /* Bug.swift */; };
 		FB1F4A8E21BB7198002775D1 /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB1F4A8D21BB7198002775D1 /* TileSets.sks */; };
 		FB1F4A9021BB71F1002775D1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB1F4A8F21BB71F1002775D1 /* GameScene.sks */; };
+		FB1F4A9221BB7B2A002775D1 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F4A9121BB7B2A002775D1 /* HUD.swift */; };
 		FBA99EB021900D2F00433C77 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EAF21900D2F00433C77 /* Player.swift */; };
 		FBA99EB2219034F000433C77 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EB1219034F000433C77 /* Types.swift */; };
 		FBA99EB42190351200433C77 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EB32190351200433C77 /* Animatable.swift */; };
@@ -59,6 +60,7 @@
 		FB12F6ED21907918005B4F4A /* Bug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bug.swift; sourceTree = "<group>"; };
 		FB1F4A8D21BB7198002775D1 /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 		FB1F4A8F21BB71F1002775D1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		FB1F4A9121BB7B2A002775D1 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		FBA99EAF21900D2F00433C77 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FBA99EB1219034F000433C77 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		FBA99EB32190351200433C77 /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				FBA99EB5219064D400433C77 /* Extensions.swift */,
 				8244417A1D3C5E8F005ECB76 /* GameViewController.swift */,
 				824441781D3C5E8F005ECB76 /* GameScene.swift */,
+				FB1F4A9121BB7B2A002775D1 /* HUD.swift */,
 				8244417F1D3C5E8F005ECB76 /* Assets.xcassets */,
 				8244418A1D3C5FE1005ECB76 /* Storyboards */,
 				824441841D3C5E8F005ECB76 /* Info.plist */,
@@ -253,6 +256,7 @@
 				FB12F6EE21907918005B4F4A /* Bug.swift in Sources */,
 				FBA99EB42190351200433C77 /* Animatable.swift in Sources */,
 				82CCE3BB1F0B0A39009B67F9 /* SKTAudio.swift in Sources */,
+				FB1F4A9221BB7B2A002775D1 /* HUD.swift in Sources */,
 				82CCE3B31F0B0A39009B67F9 /* CGFloat+Extensions.swift in Sources */,
 				FBC5FB7E21B3C75B00FE34A6 /* Firebug.swift in Sources */,
 				82CCE3BE1F0B0A39009B67F9 /* Vector3.swift in Sources */,
