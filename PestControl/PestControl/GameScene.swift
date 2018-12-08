@@ -65,6 +65,7 @@ class GameScene: SKScene {
     if !player.hasBugspray {
       updateBugspray()
     }
+    advanceBreakableTile(locateAt: player.position)
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -224,6 +225,28 @@ extension GameScene {
       player.hasBugspray = true
     }
   }
+  
+  private func tileGroupForName(tileSet: SKTileSet, name: String) -> SKTileGroup? {
+    let tileGroup = tileSet.tileGroups.filter { $0.name == name }.first
+    return tileGroup
+  }
+  
+  private func advanceBreakableTile(locateAt nodePosition: CGPoint) {
+    guard let obstaclesTileMap = obstaclesTileMap else { return }
+    // 1
+    let (column, row) = tileCoordicates(in: obstaclesTileMap, at: nodePosition)
+    // 2
+    let obstacle = tile(in: obstaclesTileMap, at: (column, row))
+    // 3
+    guard let nextTileGroupName = obstacle?.userData?.object(forKey: "breakable") as? String else {
+      return
+    }
+    // 4
+    if let nextTileGroup = tileGroupForName(tileSet: obstaclesTileMap.tileSet, name: nextTileGroupName) {
+      obstaclesTileMap.setTileGroup(nextTileGroup, forColumn: column, row: row)
+    }
+    
+  }
 }
 
 extension GameScene: SKPhysicsContactDelegate {
@@ -238,6 +261,11 @@ extension GameScene: SKPhysicsContactDelegate {
       if let firebug = other.node as? Firebug {
         remove(bug: firebug)
         player.hasBugspray = false
+      }
+    case PhysicsCategory.Breakable:
+      if let obstacleNode = other.node {
+        advanceBreakableTile(locateAt: obstacleNode.position)
+        obstacleNode.removeFromParent()
       }
     default:
       break
