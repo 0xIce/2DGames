@@ -47,6 +47,7 @@ class GameScene: SKScene {
       hud.updateGameState(from: oldValue, to: gameState)
     }
   }
+  var currentLevel = 1
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -83,6 +84,14 @@ class GameScene: SKScene {
       isPaused = true
       return
     }
+  }
+  
+  func transitionToLevel(level: Int) {
+    guard let nextScene = SKScene(fileNamed: "Level\(level)") as? GameScene else {
+      fatalError("can not found Level\(level)")
+    }
+    nextScene.currentLevel = level
+    view?.presentScene(nextScene, transition: SKTransition.flipVertical(withDuration: 0.5))
   }
   
   func checkEndGame() {
@@ -335,6 +344,12 @@ extension GameScene {
       elapsedTime = 0
     case .play:
       player.move(target: touch.location(in: self))
-    default: break}
+    case .win:
+      transitionToLevel(level: currentLevel + 1)
+    case .lose:
+      transitionToLevel(level: 1)
+    default:
+      break
+    }
   }
 }

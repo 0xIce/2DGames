@@ -29,6 +29,9 @@
 		FB1F4A8E21BB7198002775D1 /* TileSets.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB1F4A8D21BB7198002775D1 /* TileSets.sks */; };
 		FB1F4A9021BB71F1002775D1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB1F4A8F21BB71F1002775D1 /* GameScene.sks */; };
 		FB1F4A9221BB7B2A002775D1 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F4A9121BB7B2A002775D1 /* HUD.swift */; };
+		FB1F4A9621BD161E002775D1 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB1F4A9321BD161D002775D1 /* Level1.sks */; };
+		FB1F4A9721BD161E002775D1 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB1F4A9421BD161D002775D1 /* Level2.sks */; };
+		FB1F4A9821BD161E002775D1 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB1F4A9521BD161E002775D1 /* Level3.sks */; };
 		FBA99EB021900D2F00433C77 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EAF21900D2F00433C77 /* Player.swift */; };
 		FBA99EB2219034F000433C77 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EB1219034F000433C77 /* Types.swift */; };
 		FBA99EB42190351200433C77 /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA99EB32190351200433C77 /* Animatable.swift */; };
@@ -61,6 +64,9 @@
 		FB1F4A8D21BB7198002775D1 /* TileSets.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSets.sks; sourceTree = "<group>"; };
 		FB1F4A8F21BB71F1002775D1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		FB1F4A9121BB7B2A002775D1 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		FB1F4A9321BD161D002775D1 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		FB1F4A9421BD161D002775D1 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		FB1F4A9521BD161E002775D1 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 		FBA99EAF21900D2F00433C77 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		FBA99EB1219034F000433C77 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		FBA99EB32190351200433C77 /* Animatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
@@ -100,9 +106,10 @@
 		824441711D3C5E8F005ECB76 /* PestControl */ = {
 			isa = PBXGroup;
 			children = (
-				FB7ECD99219003F70033A625 /* Scenes */,
+				FB7ECD99219003F70033A625 /* Levels */,
 				82CCE3A61F0B0A2E009B67F9 /* SKTUtils */,
 				FBA99EAE21900D0900433C77 /* Characters */,
+				FB1F4A8D21BB7198002775D1 /* TileSets.sks */,
 				824441721D3C5E8F005ECB76 /* AppDelegate.swift */,
 				FBA99EB1219034F000433C77 /* Types.swift */,
 				FBA99EB5219064D400433C77 /* Extensions.swift */,
@@ -144,13 +151,15 @@
 			path = SKTUtils;
 			sourceTree = "<group>";
 		};
-		FB7ECD99219003F70033A625 /* Scenes */ = {
+		FB7ECD99219003F70033A625 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
 				FB1F4A8F21BB71F1002775D1 /* GameScene.sks */,
-				FB1F4A8D21BB7198002775D1 /* TileSets.sks */,
+				FB1F4A9321BD161D002775D1 /* Level1.sks */,
+				FB1F4A9421BD161D002775D1 /* Level2.sks */,
+				FB1F4A9521BD161E002775D1 /* Level3.sks */,
 			);
-			path = Scenes;
+			path = Levels;
 			sourceTree = "<group>";
 		};
 		FBA99EAE21900D0900433C77 /* Characters */ = {
@@ -226,8 +235,11 @@
 			files = (
 				8244417E1D3C5E8F005ECB76 /* Main.storyboard in Resources */,
 				FB1F4A9021BB71F1002775D1 /* GameScene.sks in Resources */,
+				FB1F4A9621BD161E002775D1 /* Level1.sks in Resources */,
 				FB1F4A8E21BB7198002775D1 /* TileSets.sks in Resources */,
+				FB1F4A9821BD161E002775D1 /* Level3.sks in Resources */,
 				824441801D3C5E8F005ECB76 /* Assets.xcassets in Resources */,
+				FB1F4A9721BD161E002775D1 /* Level2.sks in Resources */,
 				824441831D3C5E8F005ECB76 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
