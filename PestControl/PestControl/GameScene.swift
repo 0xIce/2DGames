@@ -203,6 +203,7 @@ extension GameScene {
     bug.removeFromParent()
     background.addChild(bug)
     bug.die()
+    hud.updateBugCount(count: bugsNode.children.count)
   }
   
   func setupObstaclePhysics() {
@@ -307,7 +308,7 @@ extension GameScene {
     camera?.addChild(hud)
 //    hud.add(message: "Howdy", position: .zero)
     hud.addTimer(time: timeLimit)
-//    hud.addBugCountLabel(count: )
+    hud.addBugCount(count: bugsNode.children.count )
   }
   
   func updateHud(currentTime: TimeInterval) {

@@ -113,17 +113,18 @@ class HUD: SKNode {
     childNode(withName: message)?.removeFromParent()
   }
   
-  func addBugCountLabel(count: Int) {
+  func addBugCount(count: Int) {
     guard let scene = scene else { return }
     let position = CGPoint(x: scene.frame.width / 2 - 10, y: scene.frame.height / 2 - 10)
     add(message: "BugCount", position: position, fontSize: 24)
     bugCountLabel = childNode(withName: "BugCount") as? SKLabelNode
     bugCountLabel?.verticalAlignmentMode = .top
+    bugCountLabel?.horizontalAlignmentMode = .right
     bugCountLabel?.fontName = "Menlo"
-    updateBugCountLabel(count: count)
+    updateBugCount(count: count)
   }
   
-  func updateBugCountLabel(count: Int) {
+  func updateBugCount(count: Int) {
     bugCountLabel?.text = "Bugs: \(count)"
   }
 }
