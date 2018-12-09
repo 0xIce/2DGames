@@ -38,8 +38,11 @@ class Player: SKSpriteNode {
     physicsBody?.categoryBitMask = PhysicsCategory.Player
     physicsBody?.contactTestBitMask = PhysicsCategory.All
   }
+  
   required init?(coder aDecoder: NSCoder) {
-    fatalError("Use init()")
+    super.init(coder: aDecoder)
+    animations = aDecoder.decodeObject(forKey: "Player.animations") as! [SKAction]
+    hasBugspray = aDecoder.decodeBool(forKey: "Player.hasBugspray")
   }
   
   // MARK: - action
