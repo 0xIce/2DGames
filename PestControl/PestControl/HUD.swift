@@ -13,6 +13,18 @@ enum HUDSettings {
   static let fontSize: CGFloat = 50
 }
 
+enum HUDMessages {
+  
+  static let tapToStart = "Tap to Start"
+  static let win = "You Win!"
+  static let lose = "Out of Time!"
+  static let nextLevel = "Tap for Next Level"
+  static let playAgain = "Tap to Play Again"
+  static let reload = "Continue Previous Game?"
+  static let yes = "Yes"
+  static let no = "No"
+}
+
 class HUD: SKNode {
   var timerLabel: SKLabelNode?
   
@@ -49,5 +61,40 @@ class HUD: SKNode {
     let seconds = time % 60
     let timerText = String(format: "%02d:%02d", minutes, seconds)
     timerLabel?.text = timerText
+  }
+  
+  func updateGameState(from: GameState, to: GameState) {
+    clearUI(gameState: from)
+    updateUI(gameState: to)
+  }
+  
+  private func updateUI(gameState: GameState) {
+    switch gameState {
+    case .win:
+      add(message: HUDMessages.win, position: .zero)
+      add(message: HUDMessages.nextLevel, position: CGPoint(x: 0, y: -100))
+    case .lose:
+      add(message: HUDMessages.lose, position: .zero)
+      add(message: HUDMessages.playAgain, position: CGPoint(x: 0, y: -100))
+    default:
+      break
+    }
+  }
+  
+  private func clearUI(gameState: GameState) {
+    switch gameState {
+    case .win:
+      remove(message: HUDMessages.win)
+      remove(message: HUDMessages.nextLevel)
+    case .lose:
+      remove(message: HUDMessages.lose)
+      remove(message: HUDMessages.playAgain)
+    default:
+      break
+    }
+  }
+  
+  private func remove(message: String) {
+    childNode(withName: message)?.removeFromParent()
   }
 }

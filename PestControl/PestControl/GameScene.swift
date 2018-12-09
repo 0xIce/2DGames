@@ -42,6 +42,11 @@ class GameScene: SKScene {
   var timeLimit: Int = 10
   var elapsedTime: Int = 0
   var startTime: Int?
+  var gameState: GameState = .initial {
+    didSet {
+      hud.updateGameState(from: oldValue, to: gameState)
+    }
+  }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -78,8 +83,12 @@ class GameScene: SKScene {
   func checkEndGame() {
     if bugsNode.children.count <= 0 {
       print("YOU WIN!!!")
+      player.physicsBody?.linearDamping = 1
+      gameState = .win
     } else if timeLimit - elapsedTime <= 0 {
       print("YOU LOST:(")
+      player.physicsBody?.linearDamping = 1
+      gameState = .lose
     }
   }
   
