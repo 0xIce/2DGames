@@ -14,6 +14,8 @@ enum HUDSettings {
 }
 
 class HUD: SKNode {
+  var timerLabel: SKLabelNode?
+  
   override init() {
     super.init()
     name = "HUD"
@@ -30,5 +32,22 @@ class HUD: SKNode {
     label.zPosition = 100
     addChild(label)
     label.position = position
+  }
+  
+  func addTimer(time: Int) {
+    guard let scene = scene else { return }
+    let position = CGPoint(x: 0, y: scene.frame.height / 2 - 10)
+    add(message: "Timer", position: position, fontSize: 24)
+    timerLabel = childNode(withName: "Timer") as? SKLabelNode
+    timerLabel?.verticalAlignmentMode = .top
+    timerLabel?.fontName = "Menlo"
+    updateTimer(time: time)
+  }
+  
+  func updateTimer(time: Int) {
+    let minutes = (time / 60) % 60
+    let seconds = time % 60
+    let timerText = String(format: "%02d:%02d", minutes, seconds)
+    timerLabel?.text = timerText
   }
 }
