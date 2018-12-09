@@ -92,3 +92,11 @@ class Player: SKSpriteNode {
 }
 
 extension Player: Animatable {}
+
+// MARk: - Save Game
+extension Player {
+  override func encode(with aCoder: NSCoder) {
+    aCoder.encode(hasBugspray, forKey: "Player.hasBugspray")
+    aCoder.encode(animations, forKey: "Player.animations")
+    super.encode(with: aCoder) }
+}

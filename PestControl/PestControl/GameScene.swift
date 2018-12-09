@@ -36,7 +36,7 @@ class GameScene: SKScene {
   var background: SKTileMapNode!
   var bugsNode = SKNode()
   var obstaclesTileMap: SKTileMapNode?
-  var firbugCount = 0
+  var firebugCount = 0
   var bugsprayTileMap: SKTileMapNode?
   var hud = HUD()
   var timeLimit: Int = 10
@@ -69,8 +69,8 @@ class GameScene: SKScene {
 //    addChild(bug)
     createBugs()
     setupObstaclePhysics()
-    if firbugCount > 0 {
-      createBugspray(quantity: firbugCount + 10)
+    if firebugCount > 0 {
+      createBugspray(quantity: firebugCount + 10)
     }
     setupHud()
     gameState = .start
@@ -166,7 +166,7 @@ extension GameScene {
         let bug: Bug
         if tile.userData?.object(forKey: "firebug") != nil {
           bug = Firebug()
-          firbugCount += 1
+          firebugCount += 1
         } else {
           bug = Bug()
         }
@@ -389,6 +389,9 @@ extension GameScene {
   
   func applicationDidEnterBackground() {
     print("* applicationDidEnterBackground")
+    if gameState != .lose {
+      saveGame()
+    }
   }
   
   func addObservers() {
@@ -405,5 +408,30 @@ extension GameScene {
       self?.applicationDidEnterBackground()
     }
     
+  }
+}
+
+// MARK: - Saving Games
+extension GameScene {
+  func saveGame() {
+    let fileManager = FileManager.default
+    guard let libDirectory = fileManager.urls(for: .libraryDirectory, in: .userDomainMask).first else { return }
+    let saveUrl = libDirectory.appendingPathComponent("SavedGames")
+    do {
+      try fileManager.createDirectory(atPath: saveUrl.path, withIntermediateDirectories: true, attributes: nil)
+    } catch let error as NSError {
+      fatalError("Failed to create directory: \(error.debugDescription)")
+    }
+    let fileUrl = saveUrl.appendingPathComponent("saved-game")
+    print("* Saving: \(fileUrl.path)")
+    NSKeyedArchiver.archiveRootObject(self, toFile: fileUrl.path)
+  }
+  
+  override func encode(with aCoder: NSCoder) {
+    aCoder.encode(firebugCount, forKey: "Scene.firebugCount")
+    aCoder.encode(elapsedTime, forKey: "Scene.elapsedTime")
+    aCoder.encode(gameState.rawValue, forKey: "Scene.gameState")
+    aCoder.encode(currentLevel, forKey: "Scene.currentLevel")
+    super.encode(with: aCoder)
   }
 }

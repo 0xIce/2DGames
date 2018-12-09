@@ -72,3 +72,10 @@ class Bug: SKSpriteNode {
 }
 
 extension Bug: Animatable {}
+
+// MARK: - Save Game
+extension Bug {
+  override func encode(with aCoder: NSCoder) {
+    aCoder.encode(animations, forKey: "Bug.animations")
+    super.encode(with: aCoder) }
+}
