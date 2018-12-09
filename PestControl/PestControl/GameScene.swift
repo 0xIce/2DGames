@@ -72,6 +72,15 @@ class GameScene: SKScene {
     }
     advanceBreakableTile(locateAt: player.position)
     updateHud(currentTime: currentTime)
+    checkEndGame()
+  }
+  
+  func checkEndGame() {
+    if bugsNode.children.count <= 0 {
+      print("YOU WIN!!!")
+    } else if timeLimit - elapsedTime <= 0 {
+      print("YOU LOST:(")
+    }
   }
   
   override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
