@@ -190,7 +190,7 @@ extension GameScene {
         }
         bug.position = bugsMap.centerOfTile(atColumn: column, row: row)
         bugsNode.addChild(bug)
-        bug.move()
+        bug.moveBug()
       }
     }
     
@@ -307,6 +307,7 @@ extension GameScene {
     camera?.addChild(hud)
 //    hud.add(message: "Howdy", position: .zero)
     hud.addTimer(time: timeLimit)
+//    hud.addBugCountLabel(count: )
   }
   
   func updateHud(currentTime: TimeInterval) {

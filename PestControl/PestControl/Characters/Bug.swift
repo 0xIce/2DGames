@@ -32,7 +32,7 @@ class Bug: SKSpriteNode {
     animations = aDecoder.decodeObject(forKey: "Bug.animations") as! [SKAction]
   }
   
-  func move() {
+  @objc func moveBug() {
     // 1
     let randomX = CGFloat(Int.random(min: -1, max: 1))
     let randomY = CGFloat(Int.random(min: -1, max: 1))
@@ -41,7 +41,7 @@ class Bug: SKSpriteNode {
                           dy: randomY * BugSettings.bugDistance)
     // 2
     let moveBy = SKAction.move(by: vector, duration: 1)
-    let moveAgain = SKAction.run(move)
+    let moveAgain = SKAction.perform(#selector(moveBug), onTarget: self)
     
     // 3.1
     let direction = animationDirection(for: vector)

@@ -43,6 +43,10 @@ class Player: SKSpriteNode {
     super.init(coder: aDecoder)
     animations = aDecoder.decodeObject(forKey: "Player.animations") as! [SKAction]
     hasBugspray = aDecoder.decodeBool(forKey: "Player.hasBugspray")
+    if hasBugspray {
+      removeAction(forKey: "blink")
+      blink(color: .green, on: hasBugspray)
+    }
   }
   
   // MARK: - action
