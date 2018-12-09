@@ -56,6 +56,7 @@ class GameScene: SKScene {
     if let timeLimit = userData?.object(forKey: "timeLimit") as? Int {
       self.timeLimit = timeLimit
     }
+    addObservers()
   }
   
   override func didMove(to view: SKView) {
@@ -77,16 +78,16 @@ class GameScene: SKScene {
   
   override func update(_ currentTime: TimeInterval) {
     super.update(currentTime)
+    if gameState != .play {
+      isPaused = true
+      return
+    }
     if !player.hasBugspray {
       updateBugspray()
     }
     advanceBreakableTile(locateAt: player.position)
     updateHud(currentTime: currentTime)
     checkEndGame()
-    if gameState != .play {
-      isPaused = true
-      return
-    }
   }
   
   func transitionToLevel(level: Int) {
@@ -107,11 +108,6 @@ class GameScene: SKScene {
       player.physicsBody?.linearDamping = 1
       gameState = .lose
     }
-  }
-  
-  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-    guard let touch = touches.first else { return }
-    player.move(target: touch.location(in: self))
   }
   
   private func setupCamera() {
@@ -351,8 +347,63 @@ extension GameScene {
       transitionToLevel(level: currentLevel + 1)
     case .lose:
       transitionToLevel(level: 1)
+    case .reload:
+      // 1
+      if let touchedNode = atPoint(touch.location(in: self)) as? SKLabelNode {
+        // 2
+        if touchedNode.name == HUDMessages.yes {
+          isPaused = false
+          startTime = nil
+          gameState = .play
+          // 3
+        } else if touchedNode.name == HUDMessages.no {
+          transitionToLevel(level: 1)
+        }
+      }
     default:
       break
     }
+  }
+  
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    guard let touch = touches.first else { return }
+    player.move(target: touch.location(in: self))
+  }
+}
+
+// MARK: - Notifications
+extension GameScene {
+  func applicationDidBecomeActive() {
+    print("* applicationDidBecomeActive")
+    if gameState == .pause {
+      gameState = .reload
+    }
+  }
+  
+  func applicationWillResignActive() {
+    print("* applicationWillResignActive")
+    if gameState != .lose {
+      gameState = .pause
+    }
+  }
+  
+  func applicationDidEnterBackground() {
+    print("* applicationDidEnterBackground")
+  }
+  
+  func addObservers() {
+    let notificationCenter = NotificationCenter.default
+    notificationCenter.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: nil) { [weak self] _ in
+      self?.applicationDidBecomeActive()
+    }
+    
+    notificationCenter.addObserver(forName: .UIApplicationWillResignActive, object: nil, queue: nil) { [weak self] _ in
+      self?.applicationWillResignActive()
+    }
+    
+    notificationCenter.addObserver(forName: .UIApplicationDidEnterBackground, object: nil, queue: nil) { [weak self] _ in
+      self?.applicationDidEnterBackground()
+    }
+    
   }
 }

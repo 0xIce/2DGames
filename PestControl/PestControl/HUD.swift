@@ -78,6 +78,10 @@ class HUD: SKNode {
       add(message: HUDMessages.playAgain, position: CGPoint(x: 0, y: -100))
     case .start:
       add(message: HUDMessages.tapToStart, position: .zero)
+    case .reload:
+      add(message: HUDMessages.reload, position: .zero, fontSize: 40)
+      add(message: HUDMessages.yes, position: CGPoint(x: -140, y: -100))
+      add(message: HUDMessages.no, position: CGPoint(x: 130, y: -100))
     default:
       break
     }
@@ -93,6 +97,10 @@ class HUD: SKNode {
       remove(message: HUDMessages.playAgain)
     case .start:
       remove(message: HUDMessages.tapToStart)
+    case .reload:
+      remove(message: HUDMessages.reload)
+      remove(message: HUDMessages.yes)
+      remove(message: HUDMessages.no)
     default:
       break
     }
