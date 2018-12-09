@@ -68,6 +68,7 @@ class GameScene: SKScene {
       createBugspray(quantity: firbugCount + 10)
     }
     setupHud()
+    gameState = .start
   }
   
   override func update(_ currentTime: TimeInterval) {
@@ -78,6 +79,10 @@ class GameScene: SKScene {
     advanceBreakableTile(locateAt: player.position)
     updateHud(currentTime: currentTime)
     checkEndGame()
+    if gameState != .play {
+      isPaused = true
+      return
+    }
   }
   
   func checkEndGame() {
@@ -315,5 +320,21 @@ extension GameScene: SKPhysicsContactDelegate {
         player.checkDirection()
       }
     }
+  }
+}
+
+// MARK: - touches
+extension GameScene {
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    guard let touch = touches.first else { return }
+    switch gameState {
+    case .start:
+      gameState = .play
+      isPaused = false
+      startTime = nil
+      elapsedTime = 0
+    case .play:
+      player.move(target: touch.location(in: self))
+    default: break}
   }
 }
