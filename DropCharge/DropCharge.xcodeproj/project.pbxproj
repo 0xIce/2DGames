@@ -27,6 +27,7 @@
 		FB1F4AD321BDAF6F002775D1 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F4AC721BDAF6F002775D1 /* SKTAudio.swift */; };
 		FB1F4AD421BDAF6F002775D1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F4AC821BDAF6F002775D1 /* Vector3.swift */; };
 		FB1F4AD521BDAF6F002775D1 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F4AC921BDAF6F002775D1 /* CGFloat+Extensions.swift */; };
+		FB4DD78721BE580D000A0AF5 /* Platform5Across.sks in Resources */ = {isa = PBXBuildFile; fileRef = FB4DD78621BE580D000A0AF5 /* Platform5Across.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FB1F4AC721BDAF6F002775D1 /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		FB1F4AC821BDAF6F002775D1 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		FB1F4AC921BDAF6F002775D1 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		FB4DD78621BE580D000A0AF5 /* Platform5Across.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Platform5Across.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		FB1F4AA421BDAE0C002775D1 /* DropCharge */ = {
 			isa = PBXGroup;
 			children = (
+				FB4DD78521BE57DE000A0AF5 /* Scene Files */,
 				FB1F4ABD21BDAF6F002775D1 /* SKTUtils */,
 				FB1F4AA521BDAE0C002775D1 /* AppDelegate.swift */,
 				FB1F4AA721BDAE0C002775D1 /* GameScene.sks */,
@@ -115,6 +118,14 @@
 				FB1F4AC921BDAF6F002775D1 /* CGFloat+Extensions.swift */,
 			);
 			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+		FB4DD78521BE57DE000A0AF5 /* Scene Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB4DD78621BE580D000A0AF5 /* Platform5Across.sks */,
+			);
+			path = "Scene Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				FB1F4AB321BDAE0D002775D1 /* Assets.xcassets in Resources */,
 				FB1F4AB621BDAE0D002775D1 /* LaunchScreen.storyboard in Resources */,
 				FB1F4AAA21BDAE0C002775D1 /* Actions.sks in Resources */,
+				FB4DD78721BE580D000A0AF5 /* Platform5Across.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
